@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/admin', 'Admin\DashboardController@index')
+    ->name('admin');
+
+Route::resource('news', 'Admin\NewsController');
+Route::resource('image', 'Admin\ImageController');
