@@ -16,6 +16,6 @@ class Image extends Model
     protected $hidden = [];
 
     public function news() {
-        return $this->belongsTo('App\Models\News', 'news_id', 'id');
+        return $this->belongsTo(News::class, 'news_id', 'id');
     }
 }

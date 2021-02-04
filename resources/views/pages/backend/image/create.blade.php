@@ -38,7 +38,7 @@
            </div>
            <div class="form-group">
                 <label for="image">Gambar</label>
-                <input type="file" class="form-control" name="image" placeholder="image">
+                <input type="file" class="form-control" name="image" placeholder="image" required>
            </div> 
            <button type="submit" class="btn btn-primary btn-block">Save</button>
         </form>

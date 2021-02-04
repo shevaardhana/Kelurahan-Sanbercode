@@ -28,19 +28,19 @@
          @csrf
             <div class="form-group">
                 <label for="title">Judul</label>
-                <input type="text" class="form-control" name="title" placeholder="Judul" value="{{ old('title')}}">
+                <input type="text" class="form-control" name="title" placeholder="Judul" value="{{ old('title')}}" required>
             </div> 
             <div class="form-group">
                 <label for="location">Lokasi</label>
-                <input type="text" class="form-control" name="location" placeholder="Lokasi" value="{{ old('location')}}">
+                <input type="text" class="form-control" name="location" placeholder="Lokasi" value="{{ old('location')}}" required>
             </div>             
             <div class="form-group">
                 <label class="CkDes" for="descriptions">Content Descriptions</label>
-                <textarea name="descriptions" id="descriptions" class="form-control">{{ old('descriptions') }}</textarea>
+                <textarea name="descriptions" id="descriptions" class="form-control" required>{{ old('descriptions') }}</textarea>
             </div>         
             <div class="form-group">
                 <label for="date">Tanggal</label>
-                <input type="date" class="form-control" name="date" placeholder="Tanggal Publish" value="{{ old('date')}}">
+                <input type="date" class="form-control" name="date" placeholder="Tanggal Publish" value="{{ old('date')}}" required>
             </div> 
             <button type="submit" class="btn btn-primary btn-block">Simpan</button>
         </form>

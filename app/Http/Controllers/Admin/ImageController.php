@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ImageRequest;
 use App\Models\News;
 use App\Models\Image;
 use Illuminate\Http\Request;
@@ -43,7 +44,7 @@ class ImageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ImageRequest $request)
     {
         $data = $request->all();
         $data['image'] = $request->file('image')->store(
@@ -73,7 +74,15 @@ class ImageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Image::findOrFail($id);
+        // dd($item);
+        $news = News::all();
+        // dd($news);
+
+        return view('pages.backend.image.edit', [
+            'item' => $item,
+            'news' => $news
+        ]);
     }
 
     /**
@@ -83,9 +92,16 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ImageRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $data['image'] = $request->file('image')->store(
+            'assets/image', 'public'
+        );
+
+        $item = Image::findOrFail($id);
+        $item->update($data);
+        return redirect()->route('image.index');
     }
 
     /**
@@ -96,6 +112,8 @@ class ImageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Image::findOrFail($id);
+        $item->delete();
+        return redirect()->route('image.index');
     }
 }

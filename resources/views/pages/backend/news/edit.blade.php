@@ -29,19 +29,19 @@
          @csrf
             <div class="form-group">
                 <label for="title">Judul</label>
-                <input type="text" class="form-control" name="title" placeholder="Title" value="{{ $item->title }}">
+                <input type="text" class="form-control" name="title" placeholder="Title" value="{{ $item->title }}" required>
             </div>
             <div class="form-group">
                 <label for="location">Lokasi</label>
-                <input type="text" class="form-control" name="location" placeholder="Lokasi" value="{{ $item->location }}">
+                <input type="text" class="form-control" name="location" placeholder="Lokasi" value="{{ $item->location }}" required>
             </div>             
             <div class="form-group">
                 <label for="descriptions">Deskripsi</label>
-                <textarea name="descriptions" id="descriptions" rows="10" class="form-control">{{ $item->descriptions }}</textarea>
+                <textarea name="descriptions" id="descriptions" rows="10" class="form-control" required>{{ $item->descriptions }}</textarea>
             </div>           
             <div class="form-group">
                 <label for="date">Tanggal</label>
-                <input type="date" class="form-control" name="date" placeholder="Tanggal Publish" value="{{ $item->date }}">
+                <input type="date" class="form-control" name="date" placeholder="Tanggal Publish" value="{{ $item->date }}" required>
             </div>           
             <button type="submit" class="btn btn-primary btn-block">Ubah</button>
         </form>

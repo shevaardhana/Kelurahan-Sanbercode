@@ -20,6 +20,6 @@ class News extends Model
     protected $hidden = [];
 
     public function galleries() {
-        return $this->hasMany('App\Models\Image', 'news_id', 'id');
+        return $this->hasMany(Image::class, 'news_id', 'id');
     }
 }

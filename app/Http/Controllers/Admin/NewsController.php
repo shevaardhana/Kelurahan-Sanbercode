@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\NewsRequest;
 use App\Models\News;
 use App\Models\Image;
 use Illuminate\Support\Str;
@@ -42,7 +43,7 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NewsRequest $request)
     {
         $data = $request->all();        
         $data['slug'] = Str::slug($request->title);       
@@ -86,7 +87,7 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(NewsRequest $request, $id)
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);      
@@ -108,6 +109,8 @@ class NewsController extends Controller
     {
         $item = News::findOrFail($id);
         $item->delete();
+
+        Image::where('news_id', $id)->delete();
         
         Alert::info('Success', 'Berhasil Hapus berita');
         return redirect()->route('news.index');
