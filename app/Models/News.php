@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class News extends Model
 {
-    use SoftDeletes; 
+    use SoftDeletes;
 
     protected $fillable = [
-        'title',        
-        'slug',  
+        'title',
+        'slug',
         'location',
         'descriptions',
         'date'
