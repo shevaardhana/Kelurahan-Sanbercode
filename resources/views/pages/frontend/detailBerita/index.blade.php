@@ -130,9 +130,17 @@
 
         <div class="col-8 contentBerita">            
             <div class="card mb-3 p-2">
-                <h5 class="card-title">Judul</h5>
-                <p class="card-text">Ditulis Oleh :</p>
-                <p class="card-text">Tanggal : </p>
+                <h5 class="card-title text-center">{{ $item->title }}</h5>
+                <p class="card-text text-center">Ditulis Oleh :</p>
+                <p class="card-text text-center">
+                    <i class="fas fa-calendar-week"></i>                  
+                    {{ \Carbon\Carbon::create($item->date)->isoFormat('dddd, D MMMM Y')}}                
+                </p>
+                <p>Kategori/Tags :
+                        <button type="button" class="btn btn-success">Covid19</button> 
+                        <button type="button" class="btn btn-success">PKH</button> 
+                        <button type="button" class="btn btn-success">Kemensos</button>  
+                </p>  
                 <img src="{{ asset('frontend/img/1.jpeg') }}" class="card-img-top" alt="gambar1" style="height: 350px;">
                <div class="row mt-1">
                    <div class="col-4">
@@ -145,13 +153,8 @@
                         <img src="{{ asset('frontend/img/1.jpeg') }}" alt="" class="img-fluid img-thumbnail">
                     </div>
                 </div>
-                <div class="card-body">
-                    <p>Kategori/Tags :
-                        <button type="button" class="btn btn-success">Covid19</button> 
-                        <button type="button" class="btn btn-success">PKH</button> 
-                        <button type="button" class="btn btn-success">Kemensos</button>  
-                    </p>                                      
-                    <p class="card-text">Deskripsi : </p>
+                <div class="card-body">                                     
+                    <p class="card-text">{!! $item->descriptions !!} </p>
                 </div>
             </div>        
                         

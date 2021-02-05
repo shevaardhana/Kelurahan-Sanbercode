@@ -22,7 +22,7 @@
 Route::get('/', 'HomeController@index')
     ->name('home');
 
-Route::get('/detail-berita', 'DetailController@index')
+Route::get('/detail-berita/{slug}', 'DetailController@index')
     ->name('detail.berita');
 
 Route::get('/admin', 'Admin\DashboardController@index')
@@ -38,4 +38,9 @@ Route::resource('news', 'Admin\NewsController');
 Route::resource('image', 'Admin\ImageController');
 Route::resource('pegawaiprofile', 'Admin\PegawaiProfileController');
 Route::resource('penduduk', 'Admin\PendudukController');
+Route::resource('struktur', 'Admin\struktur_organisasiController');
 
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

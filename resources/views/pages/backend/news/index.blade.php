@@ -50,10 +50,9 @@
                             <td>{{ $item->location }}</td>
                             <td>
                             {!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}
+                            </td>                          
+                            <td>  {{ \Carbon\Carbon::create($item->date)->isoFormat('dddd, D MMMM Y')}} </td>
                             </td>
-                            <td>{{ $item->date }}</td>
-                            <td>{{ $item->descriptions }}</td>
-                            <td>{{ $item->date }}</td>
                             <td style="text-align:center;">
                                 <a href="{{ route('news.show', $item->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="detail">
                                     <i class="fas fa-eye"></i>

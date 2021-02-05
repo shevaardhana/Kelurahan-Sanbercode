@@ -13,11 +13,13 @@
         "fideloper/proxy": "^4.4",
         "laravel/framework": "^6.20",
         "laravel/tinker": "^2.5",
-        "realrashid/sweet-alert": "^3.2"
+        "realrashid/sweet-alert": "^3.2",
+        "unisharp/laravel-filemanager": "^2.2"
     },
     "require-dev": {
         "facade/ignition": "^1.16.4",
         "fakerphp/faker": "^1.9.1",
+        "laravel/ui": "1.0",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^8.5.8|^9.3.3"

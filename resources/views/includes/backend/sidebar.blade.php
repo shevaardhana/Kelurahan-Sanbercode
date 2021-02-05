@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">               
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <img class="img-profile img-fluid"
         src="{{ asset('sbadmin2/img/logo1.png') }}">
         <!-- <div class="sidebar-brand-text mx-3">Kelurahan Sanbercode</div> -->
@@ -27,7 +27,7 @@
             <span>Berita</span></a>
     </li>
 
-     <!-- Nav Item - Pages Collapse Menu -->    
+     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link" href="{{ route('image.index') }}">
         <i class="fas fa-fw fa-folder"></i>
@@ -44,14 +44,14 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">                       
+            <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="#">Profile</a>
-                <a class="collapse-item" href="#">Struktur Organisasi</a>                        
+                <a class="collapse-item" href="{{ route('struktur.index') }}">Struktur Organisasi</a>
             </div>
         </div>
     </li>
 
-   
+
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
@@ -73,6 +73,6 @@
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>          
+    </div>
 
 </ul>
