@@ -13,20 +13,23 @@
         <div class="card">  
             <div class="card-body">
                 <h5 class="card-title">Judul : {{ $items->title }}</h5>
+                <h5 class="card-title">Penulis : </h5>
                 <h5 class="card-title">Lokasi : {{ $items->location }}</h5>
                 <h5 class="card-title">Tanggal Publish : {{ $items->date }}</h5>
-                <h5 class="card-text">Deskripsi : </h5> 
-                <p class="card-text">{{ $items->descriptions }}</p>
-                <h5 class="card-title">Gambar Berita</h5>
-                
-                <div>
+                <div class="row">
                     @foreach ($items->galleries as $gallery )
                     <div class="col-lg-3">
-                        <img src="{{ Storage::url($gallery->image) }}" alt=""> 
-                    </div>                                           
-                    @endforeach
-                </div>
-               
+                        <div class="card-group">
+                            <div class="card">
+                                <img style="height:200px;" class="card-img-top" src="{{ Storage::url($gallery->image) }}" alt="Card image cap">
+                            </div>
+                        </div>
+                    </div>               
+                     @endforeach
+                </div>             
+                <h5 class="card-text mt-4">Deskripsi : </h5> 
+                <p class="card-text">{{ $items->descriptions }}</p>
+                <h5 class="card-title">Kategori/Tags :</h5>
             </div>
         </div>
     </div>

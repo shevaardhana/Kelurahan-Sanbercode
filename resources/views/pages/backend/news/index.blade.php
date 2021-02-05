@@ -48,7 +48,9 @@
                             <td>{{ $no }}</td>                     
                             <td>{{ $item->title }}</td>
                             <td>{{ $item->location }}</td>
-                            <td>{{ $item->descriptions }}</td>                          
+                            <td>
+                            {!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}
+                            </td>                          
                             <td>{{ $item->date }}</td>                   
                             <td style="text-align:center;">
                                 <a href="{{ route('news.show', $item->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="detail">

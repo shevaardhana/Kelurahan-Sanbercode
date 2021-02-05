@@ -9,6 +9,8 @@ use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
 class ImageController extends Controller
 {
     /**
@@ -52,6 +54,7 @@ class ImageController extends Controller
         );
 
         Image::create($data);
+        Alert::success('Success', 'Berhasil menambahkan gambar');
         return redirect()->route('image.index');
     }
 
@@ -101,6 +104,8 @@ class ImageController extends Controller
 
         $item = Image::findOrFail($id);
         $item->update($data);
+
+        Alert::info('Success', 'Berhasil Ubah gambar');
         return redirect()->route('image.index');
     }
 
@@ -114,6 +119,8 @@ class ImageController extends Controller
     {
         $item = Image::findOrFail($id);
         $item->delete();
+
+        Alert::info('Success', 'Berhasil Hapus gambar');
         return redirect()->route('image.index');
     }
 }

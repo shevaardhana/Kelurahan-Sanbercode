@@ -126,7 +126,7 @@
                 <div class="row">  
                 @foreach ($items as $item)                 
                     <div class="col-lg-6">
-                        <div class="card mb-4 card-img-home" style="">
+                        <div class="card shadow mb-4 card-img-home" style="">
                             <img src="{{ $item->galleries->count() ? Storage::url($item->galleries->first()->image) : '' }}" class="card-img-top" alt="{{ $item->title }}">
                             <div class="card-body">
                               <h5 class="card-title">{{ $item->title }}</h5>

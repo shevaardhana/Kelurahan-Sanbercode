@@ -6,6 +6,11 @@ body {
     background: #00745C !important;
     border-bottom: 1px solid #F9F9FD;
 }
+
+.nav-link.active {
+    font-weight: 700;
+}
+
 .jumbotron {
     margin-top:40px;
     margin-bottom:0 !important;
