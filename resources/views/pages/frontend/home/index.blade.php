@@ -3,6 +3,8 @@
 @section('title', 'Beranda')
 
 @section('content')
+@include ('includes.frontend.jumbotron')
+@include ('includes.frontend.sambutan')
 <div class="content mt-5 p-5">
         <div class="row">
             <div class="col-3">

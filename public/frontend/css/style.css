@@ -45,11 +45,26 @@ body {
     height: 300px;
 }
 
-.card img {
-    height: 300px;;
-}
-
 .footer {
     background:#00745C;
     color: #FFF;
+}
+
+/* halaman detail berita */
+.contentDetailBerita {
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.breadcrumb {
+    margin-top: 150px;
+    background: #FFF;
+}
+
+.contentBerita {
+    margin-right: 100px;
+}
+
+.contentBerita img {
+    object-fit: cover;
 }
