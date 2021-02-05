@@ -57,7 +57,8 @@ class PegawaiProfileController extends Controller
      */
     public function show($id)
     {
-        //
+        $items = PegawaiProfile::findOrFail($id);
+        return view('pages.backend.pegawaiprofile.show',compact('items'));
     }
 
     /**
@@ -68,7 +69,8 @@ class PegawaiProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $items = PegawaiProfile::findOrFail($id);
+        return view('pages.backend.pegawaiprofile.edit', compact('items'));
     }
 
     /**

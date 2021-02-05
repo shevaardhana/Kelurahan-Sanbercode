@@ -54,7 +54,8 @@ class PendudukController extends Controller
      */
     public function show($id)
     {
-        //
+        $items = Penduduk::findOrFail($id);
+        return view('pages.backend.penduduk.show', compact('items'));
     }
 
     /**
