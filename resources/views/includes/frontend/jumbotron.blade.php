@@ -1,7 +1,7 @@
 <!-- Jumbotron -->
 <div class="jumbotron">
         <div class="container">
-            <div class="row d-flex align-items-center">
+            <div class="row d-flex align-items-center jumbotron-content">
                 <div class="col">
                     <h1 class="">Selamat Datang</h1>
                     <p class="lead">Di Website Resmi Kelurahan Sanbercode</p>        

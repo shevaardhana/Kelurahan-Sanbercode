@@ -126,7 +126,7 @@
                 <div class="row">  
                 @foreach ($items as $item)                 
                     <div class="col-lg-6">
-                        <div class="card mb-4" style="">
+                        <div class="card mb-4 card-img-home" style="">
                             <img src="{{ $item->galleries->count() ? Storage::url($item->galleries->first()->image) : '' }}" class="card-img-top" alt="{{ $item->title }}">
                             <div class="card-body">
                               <h5 class="card-title">{{ $item->title }}</h5>
@@ -136,7 +136,7 @@
                                 {{ $item->date }}
                               </p>
                               <p class="card-text">{!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}</p>
-                              <a href="#" class="btn btn-primary btnPrimary">Baca Selengkapnya ...</a>
+                              <a href=" {{ route('detail.berita') }} " class="btn btn-primary btnPrimary">Baca Selengkapnya ...</a>
                             </div>
                         </div>
                     </div>

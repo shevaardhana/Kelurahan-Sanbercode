@@ -2,11 +2,19 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.navbar-bg {
+    background: #00745C !important;
+    border-bottom: 1px solid #F9F9FD;
+}
 .jumbotron {
-    margin-top:80px;
+    margin-top:40px;
     margin-bottom:0 !important;
     background:#00745C;
     color: #FFF;
+}
+
+.jumbotron-content {
+    padding-top: 40px;
 }
 
 .btnPrimary {
@@ -39,6 +47,10 @@ body {
     margin-left: 25%;
     line-height: 30px;
     text-align: justify;
+}
+
+.card-img-home img {
+    height: 300px;
 }
 
 .carousel-inner img {
