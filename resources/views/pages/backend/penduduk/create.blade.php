@@ -46,10 +46,9 @@
                     <input type="text" class="form-control" name="jumlah_kelahiran" placeholder="Isi Jumlah Kelahiran" value="{{ old('location')}}" required>
                 </div>
                 <div class="form-group">
-                    <label for="keterangan">Keterangan</label>
-                    <input type="text" class="form-control" name="keterangan" placeholder="Keterangan jika dibutuhkan" value="{{ old('location')}}">
+                    <label class="Keterangan" for="keterangan">Keterangan</label>
+                    <textarea name="keterangan" id="keterangan" class="form-control" >{{ old('keterangan') }}</textarea>
                 </div>
-
                 <button type="submit" class="btn btn-primary btn-block">Simpan</button>
             </form>
          </div>

@@ -3,14 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\struktur_organisasi;
 use Illuminate\Http\Request;
+use App\Http\Requests\struktur_organisasiRequest;
 use Illuminate\Support\Str;
-use App\Http\Requests\PegawaiProfileRequest;
-use App\Models\PegawaiProfile;
+
 use RealRashid\SweetAlert\Facades\Alert;
 
 
-class PegawaiProfileController extends Controller
+class struktur_organisasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +20,8 @@ class PegawaiProfileController extends Controller
      */
     public function index()
     {
-        $items = PegawaiProfile::all();
-
-        return view('pages.backend.pegawaiprofile.index', compact('items'));
+        $items = struktur_organisasi::all();
+        return view('pages.backend.struktur.index',compact('items'));
     }
 
     /**
@@ -31,7 +31,7 @@ class PegawaiProfileController extends Controller
      */
     public function create()
     {
-        return view('pages.backend.pegawaiprofile.create');
+        return view('pages.backend.struktur.create');
     }
 
     /**
@@ -40,13 +40,16 @@ class PegawaiProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PegawaiProfileRequest $request)
+    public function store(Request $request)
     {
         $data = $request->all();
-        PegawaiProfile::create($data);
+        $data['image'] = $request->file('image')->store(
+            'assets/image', 'public'
+        );
 
-        Alert::success('Success', 'Berhasil menambahkan Profil Pegawai terbaru');
-        return redirect()->route('pegawaiprofile.index');
+        struktur_organisasi::create($data);
+        Alert::success('Success', 'Berhasil menambahkan gambar');
+        return redirect()->route('struktur.index');
     }
 
     /**
@@ -57,8 +60,7 @@ class PegawaiProfileController extends Controller
      */
     public function show($id)
     {
-        $items = PegawaiProfile::findOrFail($id);
-        return view('pages.backend.pegawaiprofile.show',compact('items'));
+
     }
 
     /**
@@ -69,8 +71,12 @@ class PegawaiProfileController extends Controller
      */
     public function edit($id)
     {
-        $items = PegawaiProfile::findOrFail($id);
-        return view('pages.backend.pegawaiprofile.edit', compact('items'));
+        $item = struktur_organisasi::findOrFail($id);
+        // dd($item);
+
+        return view('pages.backend.struktur.edit', [
+            'item' => $item
+        ]);
     }
 
     /**
@@ -80,15 +86,18 @@ class PegawaiProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PegawaiProfileRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $data = $request->all();
+        $data['image'] = $request->file('image')->store(
+            'assets/image', 'public'
+        );
 
-        $items = PegawaiProfile::findOrFail($id);
-        $items->update($data);
+        $item = struktur_organisasi::findOrFail($id);
+        $item->update($data);
 
-        Alert::info('Success', 'Berhasil Update Profile Pegawai');
-        return redirect()->route('pegawaiprofile.index');
+        Alert::info('Success', 'Berhasil Ubah gambar');
+        return redirect()->route('struktur.index');
     }
 
     /**
@@ -99,11 +108,10 @@ class PegawaiProfileController extends Controller
      */
     public function destroy($id)
     {
-        $items = PegawaiProfile::findOrFail($id);
-        $items->delete();
+        $item = struktur_organisasi::findOrFail($id);
+        $item->delete();
 
-        Alert::info('Success', 'Berhasil Delete Data Pegawai');
-        return redirect()->route('pegawaiprofile.index');
+        Alert::info('Success', 'Berhasil Hapus gambar');
+        return redirect()->route('struktur.index');
     }
-
 }
