@@ -83,6 +83,8 @@ class PendudukController extends Controller
 
         $items = Penduduk::findOrFail($id);
         $items->update($data);
+
+        Alert::info('Success', 'Berhasil Update Data Penduduk');
         return redirect()->route('penduduk.index');
     }
 
@@ -94,6 +96,10 @@ class PendudukController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $items = Penduduk::findOrFail($id);
+        $items->delete();
+
+        Alert::info('Success', 'Berhasil Delete Data Penduduk');
+        return redirect()->route('penduduk.index');
     }
 }
