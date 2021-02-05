@@ -1,19 +1,18 @@
 @extends('layouts.backend.master')
 
 @section('content')
-
-<!-- Begin Page Content -->
+    <!-- Begin Page Content -->
 <div class="container-fluid">
 
     <!-- Page Heading -->
     <div class="d-sm-flex justify-content-end mb-4">
-        <a href="{{ route('news.create') }}" class="btn btn-sm btn-primary shadow-sm">
-            <i class="fas fa-plus fa-sm text-white-100"></i> Tambah Berita
+        <a href="{{ route('pegawaiprofile.create') }}" class="btn btn-sm btn-primary shadow-sm">
+            <i class="fas fa-plus fa-sm text-white-100"></i> Tambah Profil Pegawai
         </a>
     </div>
 
     <div class="d-sm-flex d-flex justify-content-center">
-        <h1 class="h3 mb-0 text-gray-800">Daftar Berita</h1>
+        <h1 class="h3 mb-0 text-gray-800">Daftar Pegawai</h1>
     </div>
 
     <div class="row">
@@ -32,31 +31,31 @@
                     <thead class="thead-dark">
                         <tr>
                             <th style="width: 5%;">NO</th>
-                            <th>Judul</th>
-                            <th style="width: 15%;">Lokasi</th>
-                            <th>Deskripsi</th>
-                            <th style="width: 15%;">Tanggal</th>
+                            <th>Nama Lengkap</th>
+                            <th style="width: 15%;">Alamat</th>
+                            <th>Nomor Telpon</th>
+                            <th style="width: 15%;">Jabatan</th>
                             <th style="width: 18%;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php $no = 0;?>
-                    @forelse ($items as $item)
+                    @forelse ($items as $value)
                     <?php $no++ ;?>
                         <tr>
                             <td>{{ $no }}</td>
-                            <td>{{ $item->title }}</td>
-                            <td>{{ $item->location }}</td>
-                            <td>{{ $item->descriptions }}</td>
-                            <td>{{ $item->date }}</td>
+                            <td>{{ $value->nama_lengkap }}</td>
+                            <td>{{ $value->alamat }}</td>
+                            <td>{{ $value->no_telp }}</td>
+                            <td>{{ $value->jabatan }}</td>
                             <td style="text-align:center;">
-                                <a href="{{ route('news.show', $item->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="detail">
+                                <a href="{{ route('pegawaiprofile.show', $value->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="detail">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="{{ route('news.edit', $item->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="edit">
+                                <a href="{{ route('pegawaiprofile.edit', $value->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="edit">
                                     <i class="fa fa-pencil-alt"></i>
                                 </a>
-                                <form action="{{ route('news.destroy', $item->id) }}"
+                                <form action="{{ route('pegawaiprofile.destroy', $value->id) }}"
                                     method="POST" class="d-inline form-delete">
                                     @csrf
                                     @method('delete')
@@ -69,7 +68,7 @@
                     @empty
                         <tr>
                             <td colspan="7" class="text-center">
-                                Belum Ada Data Berita
+                                Belum Ada Data Pegawai
                             </td>
                         </tr>
                     @endforelse
@@ -81,6 +80,7 @@
 </div>
 <!-- /.container-fluid -->
 @include('includes.backend.ModalDelete')
+
 @endsection
 
 @push('after-scripts')

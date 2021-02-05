@@ -4,7 +4,7 @@
     @include ('includes.backend.meta')
     @stack('before-style')
     @include ('includes.backend.styles')
-    @stack('after-style')    
+    @stack('after-style')
 </head>
 <body id="page-top">
     <!-- Page Wrapper -->
@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-    
+
     @include('sweetalert::alert')
     @stack('before-scripts')
     @include ('includes.backend.scripts')

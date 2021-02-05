@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ImageRequest extends FormRequest
+class PegawaiProfileRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,10 @@ class ImageRequest extends FormRequest
     public function rules()
     {
         return [
-            'news_id' => 'required|integer|exists:news,id',
-            'image' => 'required|image'
+            'nama_lengkap' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required',
+            'jabatan' => 'required'
         ];
     }
 }
