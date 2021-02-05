@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use Illuminate\Http\Request;
 
-use PDF;
-
 class HomeController extends Controller
 {
     public function index() {

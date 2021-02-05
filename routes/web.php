@@ -34,3 +34,7 @@ Route::resource('pegawaiprofile', 'Admin\PegawaiProfileController');
 Route::resource('penduduk', 'Admin\PendudukController');
 Route::resource('struktur', 'Admin\struktur_organisasiController');
 
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
