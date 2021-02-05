@@ -86,6 +86,8 @@ class PegawaiProfileController extends Controller
 
         $items = PegawaiProfile::findOrFail($id);
         $items->update($data);
+
+        Alert::info('Success', 'Berhasil Update Profile Pegawai');
         return redirect()->route('pegawaiprofile.index');
     }
 
@@ -97,7 +99,11 @@ class PegawaiProfileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $items = PegawaiProfile::findOrFail($id);
+        $items->delete();
+
+        Alert::info('Success', 'Berhasil Delete Data Pegawai');
+        return redirect()->route('pegawaiprofile.index');
     }
 
 }
