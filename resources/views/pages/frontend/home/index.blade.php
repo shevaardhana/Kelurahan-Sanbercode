@@ -118,11 +118,29 @@
 
             <!-- berita -->
             <div class="col-9">
-                <div class="row d-flex justify-content-center">
+                <div class="row d-flex justify-content-center" id="news">
                     <h2>Berita Terkini</h2>
                 </div>
-                <div class="row">                   
+                <div class="row">  
+                @foreach ($items as $item)                 
                     <div class="col-lg-6">
+                        <div class="card mb-4" style="">
+                            <img src="{{ $item->galleries->count() ? Storage::url($item->galleries->first()->image) : '' }}" class="card-img-top" alt="{{ $item->title }}">
+                            <div class="card-body">
+                              <h5 class="card-title">{{ $item->title }}</h5>
+                              <p class="card-title"> Ditulis Oleh : </p>
+                              <p class="card-text">
+                                <i class="fas fa-calendar-week"></i>
+                                {{ $item->date }}
+                              </p>
+                              <p class="card-text">{!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}</p>
+                              <a href="#" class="btn btn-primary btnPrimary">Baca Selengkapnya ...</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+                    <!-- <div class="col-lg-6">
                         <div class="card mb-4" style="">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
@@ -171,17 +189,7 @@
                               <a href="#" class="btn btn-primary btnPrimary">Go somewhere</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card mb-4" style="">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary btnPrimary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

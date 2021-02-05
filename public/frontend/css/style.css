@@ -45,6 +45,10 @@ body {
     height: 300px;
 }
 
+.card img {
+    height: 300px;;
+}
+
 .footer {
     background:#00745C;
     color: #FFF;

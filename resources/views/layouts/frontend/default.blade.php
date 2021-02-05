@@ -19,7 +19,7 @@
                     <h1 class="">Selamat Datang</h1>
                     <p class="lead">Di Website Resmi Kelurahan Sanbercode</p>        
                     <p>Menuju Kelurahan Digital Revolusi Industri 4.0</p>
-                    <a class="btn btn-primary btn-lg btnPrimary" href="#" role="button">Dapatkan Berita Terkini</a>
+                    <!-- <a class="btn btn-primary btn-lg btnPrimary" href="#news" role="button">Dapatkan Berita Terkini</a> -->
                 </div>
                 <div class="col">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
