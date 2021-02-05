@@ -28,6 +28,12 @@ Route::get('/detail-berita', 'DetailController@index')
 Route::get('/admin', 'Admin\DashboardController@index')
     ->name('admin');
 
+Route::get('/detailpegawaiprofile', 'DetailPegawaiProfileController@index')
+    ->name('detail.pegawai');
+
+Route::get('/detailpenduduk', 'DetailPendudukController@index')
+    ->name('detail.penduduk');
+
 Route::resource('news', 'Admin\NewsController');
 Route::resource('image', 'Admin\ImageController');
 Route::resource('pegawaiprofile', 'Admin\PegawaiProfileController');
