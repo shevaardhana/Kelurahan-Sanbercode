@@ -9,25 +9,25 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav text-uppercase mx-auto">
                 <li class="nav-item active">
-                  <a class="nav-link mr-5 text-white @if(Request::is('/')) active @endif" 
+                  <a class="nav-link mr-5 text-white @if(Request::is('/')) active @endif"
                      href=" {{ route('home') }} ">Beranda <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mr-5 text-white" 
+                    <a class="nav-link dropdown-toggle mr-5 text-white"
                       href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Profile
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{{ route('detail.pegawai') }} ">Data Pegawai</a>
-                      <a class="dropdown-item" href="#">Struktur Organisasi</a>                     
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">                   
+                      <a class="dropdown-item" href=" {{ route('detail.pegawai') }} ">Data Pegawai</a>
+                      <a class="dropdown-item" href=" {{ route('detail.penduduk') }} ">Struktur Organisasi</a>
                       <a class="dropdown-item" href="#">Profile</a>
                     </div>
                   </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white"  
+                  <a class="nav-link text-white"
                      href="#">Data Penduduk</a>
                 </li>
               </ul>
             </div>
-        </div>        
+        </div>
 </nav>
