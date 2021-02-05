@@ -1,6 +1,6 @@
 @extends ('layouts.backend.master')
 
-@section('title', 'Dashboard')
+@section('title', 'Dashboard Admin')
 
 @section ('content')
 <div class="container-fluid">

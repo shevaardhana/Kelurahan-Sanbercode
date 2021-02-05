@@ -1,0 +1,82 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-bg {
+    background: #00745C !important;
+    border-bottom: 1px solid #F9F9FD;
+}
+.jumbotron {
+    margin-top:40px;
+    margin-bottom:0 !important;
+    background:#00745C;
+    color: #FFF;
+}
+
+.jumbotron-content {
+    padding-top: 40px;
+}
+
+.btnPrimary {
+    background:#29A168;
+    border: 0;
+    margin-bottom: 50px;
+}
+
+.btnSecondary {
+    background:#00745C;
+    border: 0;
+}
+
+.sambutan {
+    background:#E6A858;
+    height: 330px;
+}
+
+.lurah {
+    height: 200px;
+    width: 200px;
+    margin-top: -40px;
+    border: 0;
+    -webkit-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.67); 
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.67);
+}
+
+.sambutan-lurah {
+    margin-top: -120px;
+    margin-left: 25%;
+    line-height: 30px;
+    text-align: justify;
+}
+
+.card-img-home img {
+    height: 300px;
+}
+
+.carousel-inner img {
+    height: 300px;
+}
+
+.footer {
+    background:#00745C;
+    color: #FFF;
+}
+
+/* halaman detail berita */
+.contentDetailBerita {
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.breadcrumb {
+    margin-top: 150px;
+    background: #FFF;
+}
+
+.contentBerita {
+    margin-right: 100px;
+}
+
+.contentBerita img {
+    object-fit: cover;
+}
