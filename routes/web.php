@@ -30,3 +30,6 @@ Route::get('/admin', 'Admin\DashboardController@index')
 
 Route::resource('news', 'Admin\NewsController');
 Route::resource('image', 'Admin\ImageController');
+Route::resource('pegawaiprofile', 'Admin\PegawaiProfileController');
+Route::resource('penduduk', 'Admin\PendudukController');
+

@@ -1,20 +1,18 @@
 @extends('layouts.backend.master')
 
-@section('title', 'Berita')
 @section('content')
-
-<!-- Begin Page Content -->
+    <!-- Begin Page Content -->
 <div class="container-fluid">
 
     <!-- Page Heading -->
     <div class="d-sm-flex justify-content-end mb-4">
-        <a href="{{ route('news.create') }}" class="btn btn-sm btn-primary shadow-sm">
-            <i class="fas fa-plus fa-sm text-white-100"></i> Tambah Berita
+        <a href="{{ route('penduduk.create') }}" class="btn btn-sm btn-primary shadow-sm">
+            <i class="fas fa-plus fa-sm text-white-100"></i> Tambah Data Penduduk
         </a>
     </div>
 
     <div class="d-sm-flex d-flex justify-content-center">
-        <h1 class="h3 mb-0 text-gray-800">Daftar Berita</h1>
+        <h1 class="h3 mb-0 text-gray-800">Daftar Penduduk</h1>
     </div>
 
     <div class="row">
@@ -33,38 +31,35 @@
                     <thead class="thead-dark">
                         <tr>
                             <th style="width: 5%;">NO</th>
-                            <th>Judul</th>
-                            <th style="width: 15%;">Lokasi</th>
-                            <th>Deskripsi</th>
-                            <th style="width: 15%;">Tanggal</th>
-                            <th style="width: 18%;">Action</th>
+                            <th style="width: 15%;">Nama Desa</th>
+                            <th style="width: 10%;">Jumlah Pria</th>
+                            <th style="width: 10%;">Jumlah Wanita</th>
+                            <th style="width: 10%;">Jumlah Kematian</th>
+                            <th style="width: 10%;">Jumlah Kelahiran</th>
+                             <th style="width: 18%;">Keterangan</th>
+                             <th style="width: 18%;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php $no = 0;?>
-                    @forelse ($items as $item)
+                    @forelse ($items as $value)
                     <?php $no++ ;?>
                         <tr>
                             <td>{{ $no }}</td>
-                            <td>{{ $item->title }}</td>
-                            <td>{{ $item->location }}</td>
-<<<<<<< HEAD
-                            <td>
-                            {!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}
-                            </td>                          
-                            <td>{{ $item->date }}</td>                   
-=======
-                            <td>{{ $item->descriptions }}</td>
-                            <td>{{ $item->date }}</td>
->>>>>>> bfa86a9d7e26824234869dbf0d6d9144ab3c152e
+                            <td>{{ $value->nama_desa }}</td>
+                            <td>{{ $value->jumlah_pria }}</td>
+                            <td>{{ $value->jumlah_wanita }}</td>
+                            <td>{{ $value->jumlah_kematian }}</td>
+                            <td>{{ $value->jumlah_kelahiran }}</td>
+                            <td>{{ $value->keterangan }}</td>
                             <td style="text-align:center;">
-                                <a href="{{ route('news.show', $item->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="detail">
+                                <a href="{{ route('penduduk.show', $value->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="detail">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="{{ route('news.edit', $item->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="edit">
+                                <a href="{{ route('penduduk.edit', $value->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="edit">
                                     <i class="fa fa-pencil-alt"></i>
                                 </a>
-                                <form action="{{ route('news.destroy', $item->id) }}"
+                                <form action="{{ route('penduduk.destroy', $value->id) }}"
                                     method="POST" class="d-inline form-delete">
                                     @csrf
                                     @method('delete')
@@ -77,7 +72,7 @@
                     @empty
                         <tr>
                             <td colspan="7" class="text-center">
-                                Belum Ada Data Berita
+                                Belum Ada Data Penduduk
                             </td>
                         </tr>
                     @endforelse
@@ -89,6 +84,7 @@
 </div>
 <!-- /.container-fluid -->
 @include('includes.backend.ModalDelete')
+
 @endsection
 
 @push('after-scripts')

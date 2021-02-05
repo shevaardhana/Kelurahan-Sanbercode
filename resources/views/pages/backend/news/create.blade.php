@@ -8,7 +8,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-center mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Form Tambah Berita</h1> 
+        <h1 class="h3 mb-0 text-gray-800">Form Tambah Berita</h1>
     </div>
 
     <!-- Munculkan error -->
@@ -17,7 +17,7 @@
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
-            @endforeach        
+            @endforeach
         </ul>
     </div>
     @endif
@@ -30,19 +30,19 @@
             <div class="form-group">
                 <label for="title">Judul</label>
                 <input type="text" class="form-control" name="title" placeholder="Judul" value="{{ old('title')}}" required>
-            </div> 
+            </div>
             <div class="form-group">
                 <label for="location">Lokasi</label>
                 <input type="text" class="form-control" name="location" placeholder="Lokasi" value="{{ old('location')}}" required>
-            </div>             
+            </div>
             <div class="form-group">
                 <label class="CkDes" for="descriptions">Content Descriptions</label>
                 <textarea name="descriptions" id="descriptions" class="form-control" required>{{ old('descriptions') }}</textarea>
-            </div>         
+            </div>
             <div class="form-group">
                 <label for="date">Tanggal</label>
                 <input type="date" class="form-control" name="date" placeholder="Tanggal Publish" value="{{ old('date')}}" required>
-            </div> 
+            </div>
             <button type="submit" class="btn btn-primary btn-block">Simpan</button>
         </form>
      </div>

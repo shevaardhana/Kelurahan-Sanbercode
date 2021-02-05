@@ -3,15 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\NewsRequest;
-use App\Models\News;
-use App\Models\Image;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
+use App\Http\Requests\PegawaiProfileRequest;
+use App\Models\PegawaiProfile;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class NewsController extends Controller
+
+class PegawaiProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,11 +19,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $items = News::all();
+        $items = PegawaiProfile::all();
 
-        return view('pages.backend.news.index', [
-            'items' => $items
-        ]);
+        return view('pages.backend.pegawaiprofile.index', compact('items'));
     }
 
     /**
@@ -34,7 +31,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('pages.backend.news.create');
+        return view('pages.backend.pegawaiprofile.create');
     }
 
     /**
@@ -43,15 +40,13 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NewsRequest $request)
+    public function store(PegawaiProfileRequest $request)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->title);
+        PegawaiProfile::create($data);
 
-        News::create($data);
-
-        Alert::success('Success', 'Berhasil menambahkan berita terbaru');
-        return redirect()->route('news.index');
+        Alert::success('Success', 'Berhasil menambahkan Profil Pegawai terbaru');
+        return redirect()->route('pegawaiprofile.index');
     }
 
     /**
@@ -62,8 +57,7 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        $items = News::findOrFail($id);
-        return view('pages.backend.news.show', ['items' => $items]);
+        //
     }
 
     /**
@@ -74,10 +68,7 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        $item = News::findOrFail($id);
-        return view('pages.backend.news.edit', [
-            'item' => $item
-        ]);
+        //
     }
 
     /**
@@ -87,16 +78,9 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(NewsRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $data['slug'] = Str::slug($request->title);
-
-        $item = News::findOrFail($id);
-        $item->update($data);
-
-        Alert::info('Success', 'Berhasil Ubah berita');
-        return redirect()->route('news.index');
+        //
     }
 
     /**
@@ -107,12 +91,7 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        $item = News::findOrFail($id);
-        $item->delete();
-
-        Image::where('news_id', $id)->delete();
-
-        Alert::info('Success', 'Berhasil Hapus berita');
-        return redirect()->route('news.index');
+        //
     }
+
 }
