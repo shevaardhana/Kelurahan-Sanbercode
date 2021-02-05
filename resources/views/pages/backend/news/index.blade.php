@@ -48,15 +48,10 @@
                             <td>{{ $no }}</td>
                             <td>{{ $item->title }}</td>
                             <td>{{ $item->location }}</td>
-<<<<<<< HEAD
                             <td>
                             {!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}
                             </td>                          
-                            <td>{{ $item->date }}</td>                   
-=======
-                            <td>{{ $item->descriptions }}</td>
-                            <td>{{ $item->date }}</td>
->>>>>>> bfa86a9d7e26824234869dbf0d6d9144ab3c152e
+                            <td>  {{ \Carbon\Carbon::create($item->date)->isoFormat('dddd, D MMMM Y')}} </td>
                             <td style="text-align:center;">
                                 <a href="{{ route('news.show', $item->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="detail">
                                     <i class="fas fa-eye"></i>

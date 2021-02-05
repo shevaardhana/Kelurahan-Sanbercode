@@ -136,7 +136,7 @@
                                 {{ $item->date }}
                               </p>
                               <p class="card-text">{!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}</p>
-                              <a href=" {{ route('detail.berita') }} " class="btn btn-primary btnPrimary">Baca Selengkapnya ...</a>
+                              <a href=" {{ route('detail.berita', $item->slug) }} " class="btn btn-primary btnPrimary">Baca Selengkapnya ...</a>
                             </div>
                         </div>
                     </div>

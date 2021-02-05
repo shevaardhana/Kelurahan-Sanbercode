@@ -7,6 +7,7 @@ use App\Http\Requests\PendudukRequest;
 use Illuminate\Http\Request;
 use App\Models\Penduduk;
 use RealRashid\SweetAlert\Facades\Alert;
+use PDF;
 
 class PendudukController extends Controller
 {

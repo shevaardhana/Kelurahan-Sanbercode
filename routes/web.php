@@ -22,7 +22,7 @@
 Route::get('/', 'HomeController@index')
     ->name('home');
 
-Route::get('/detail-berita', 'DetailController@index')
+Route::get('/detail-berita/{slug}', 'DetailController@index')
     ->name('detail.berita');
 
 Route::get('/admin', 'Admin\DashboardController@index')
