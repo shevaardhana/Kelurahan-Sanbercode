@@ -1,0 +1,51 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.jumbotron {
+    margin-top:80px;
+    margin-bottom:0 !important;
+    background:#00745C;
+    color: #FFF;
+}
+
+.btnPrimary {
+    background:#29A168;
+    border: 0;
+    margin-bottom: 50px;
+}
+
+.btnSecondary {
+    background:#00745C;
+    border: 0;
+}
+
+.sambutan {
+    background:#E6A858;
+    height: 330px;
+}
+
+.lurah {
+    height: 200px;
+    width: 200px;
+    margin-top: -40px;
+    border: 0;
+    -webkit-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.67); 
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.67);
+}
+
+.sambutan-lurah {
+    margin-top: -120px;
+    margin-left: 25%;
+    line-height: 30px;
+    text-align: justify;
+}
+
+.carousel-inner img {
+    height: 300px;
+}
+
+.footer {
+    background:#00745C;
+    color: #FFF;
+}

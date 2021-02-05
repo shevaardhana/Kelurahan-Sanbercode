@@ -1,5 +1,5 @@
 @extends('layouts.backend.master')
-
+@section('title', 'Ubah Gambar')
 @section('content')
 
 <!-- Begin Page Content -->

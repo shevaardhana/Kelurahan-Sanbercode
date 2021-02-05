@@ -15,6 +15,13 @@
 //     return view('welcome');
 // });
 
+// Route::get('/', function () {
+//     return view('layouts.frontend.default');
+// });
+
+Route::get('/', 'HomeController@index')
+    ->name('home');
+
 Route::get('/admin', 'Admin\DashboardController@index')
     ->name('admin');
 
