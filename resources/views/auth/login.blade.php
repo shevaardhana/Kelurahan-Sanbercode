@@ -1,11 +1,15 @@
 @extends('layouts.app')
+@section('content')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+            <div class="card" style="margin-top:50px;">
+                <div class="card-header bg-dark">
+                <!-- {{ __('Login') }} -->
+                    <p class="text-center mb-0 text-white" style="font-size:16px;">Silahkan Masukkan Email dan Password </p> 
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

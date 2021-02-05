@@ -100,6 +100,20 @@ p {
   margin-bottom: 1rem;
 }
 
+.navbar-bg {
+    background: #00745C !important;
+    border-bottom: 1px solid #F9F9FD;
+}
+
+.navbar-bg .nav-link  {
+    color: #FFF !important;
+    font-size: 20px !important;
+}
+
+.navbar-bg .nav-link:hover  {
+  color: #FFD !important;
+}
+
 abbr[title],
 abbr[data-original-title] {
   text-decoration: underline;
