@@ -1,6 +1,7 @@
 @extends('layouts.backend.master')
 @section('title', 'Penduduk')
 
+@section('title', 'List Penduduk')
 @section('content')
     <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -54,6 +55,7 @@
                             <td>{{ $value->jumlah_kelahiran }}</td>
                             <td>{{ $value->keterangan }}</td>
                             <td style="text-align:center;">
+
                                 <a href="{{ route('penduduk.edit', $value->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="edit">
                                     <i class="fa fa-pencil-alt"></i>
                                 </a>

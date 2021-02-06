@@ -1,6 +1,7 @@
 @extends('layouts.backend.master')
 @section('title', 'Tambah Data Penduduk')
 
+@section('title', 'Tambah Penduduk')
 @section('content')
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -27,7 +28,7 @@
             <form action="{{ route('penduduk.store')}}" method="POST" enctype="multipart/form-data">
              @csrf
                 <div class="form-group">
-                    <label for="nama_desa">Nama Desa</label>
+                    <label for="nama_desa">RT/Lingkungan</label>
                     <input type="text" class="form-control" name="nama_desa" placeholder="Isi Nama Desa" value="{{ old('title')}}" required>
                 </div>
                 <div class="form-group">

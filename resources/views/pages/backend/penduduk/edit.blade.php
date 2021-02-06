@@ -1,7 +1,7 @@
 @extends('layouts.backend.master')
 @section('title', 'Edit Data Penduduk')
 
-{{-- @section('title', 'Ubah Berita') --}}
+@section('title', 'Ubah Penduduk')
 @section('content')
 
 <!-- Begin Page Content -->

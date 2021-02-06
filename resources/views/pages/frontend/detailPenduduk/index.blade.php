@@ -43,12 +43,6 @@
                             </td>
                         </tr>
                     @endforelse
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
 
 @endsection
 

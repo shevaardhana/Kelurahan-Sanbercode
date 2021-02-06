@@ -128,16 +128,22 @@
                     <div class="col-lg-6">
                         <div class="card shadow mb-4 card-img-home" style="">
                             <img src="{{ $item->galleries->count() ? Storage::url($item->galleries->first()->image) : '' }}" class="card-img-top" alt="{{ $item->title }}">
-                            <div class="card-body">
+                            <div class="card-body" style="height: 300px;">
                               <h5 class="card-title">{{ $item->title }}</h5>
                               <p class="card-title"> Ditulis Oleh : </p>
                               <p class="card-text">
                                 <i class="fas fa-calendar-week"></i>
                                 {{ $item->date }}
                               </p>
-                              <p class="card-text">{!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}</p>
-                              <a href=" {{ route('detail.berita', $item->slug) }} " class="btn btn-primary btnPrimary">Baca Selengkapnya ...</a>
+                              <p class="card-text">{!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}</p>                              
                             </div>
+                            <div class="d-flex justify-content-center" style="padding-bottom: 10px;">
+                                    <a href=" {{ route('detail.berita', $item->slug) }} " 
+                                       class="btn btn-primary btnPrimary"  target="_blank" 
+                                       >
+                                       Baca Selengkapnya ...
+                                    </a>
+                              </div>
                         </div>
                     </div>
                 @endforeach

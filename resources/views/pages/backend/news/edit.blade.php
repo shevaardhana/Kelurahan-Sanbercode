@@ -1,6 +1,10 @@
 @extends('layouts.backend.master')
 
 @section('title', 'Ubah Berita')
+
+@push('after-style')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.6.2/tinymce.min.js"></script>
+@endpush
 @section('content')
 
 <!-- Begin Page Content -->
@@ -37,8 +41,10 @@
                 <input type="text" class="form-control" name="location" placeholder="Lokasi" value="{{ $item->location }}" required>
             </div>
             <div class="form-group">
-                <label for="descriptions">Deskripsi</label>
-                <textarea name="descriptions" id="descriptions" rows="10" class="form-control" required>{{ $item->descriptions }}</textarea>
+                <label for="descriptions">Deskripsi</label>              
+                <textarea name="descriptions" id="descriptions" class="form-control my-editor">
+                {{ $item->descriptions }}
+                </textarea>
             </div>
             <div class="form-group">
                 <label for="date">Tanggal</label>
@@ -54,3 +60,46 @@
 <!-- /.container-fluid -->
 
 @endsection
+
+@push('after-scripts')
+<script>
+  var editor_config = {
+    path_absolute : "/",
+    selector: 'textarea.my-editor',
+    relative_urls: false,
+    plugins: [
+      "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+      "searchreplace wordcount visualblocks visualchars code fullscreen",
+      "insertdatetime media nonbreaking save table directionality",
+      "emoticons template paste textpattern"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
+    file_picker_callback : function(callback, value, meta) {
+      var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+      var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
+
+      var cmsURL = editor_config.path_absolute + 'laravel-filemanager?editor=' + meta.fieldname;
+      if (meta.filetype == 'image') {
+        cmsURL = cmsURL + "&type=Images";
+      } else {
+        cmsURL = cmsURL + "&type=Files";
+      }
+
+      tinyMCE.activeEditor.windowManager.openUrl({
+        url : cmsURL,
+        title : 'Filemanager',
+        width : x * 0.8,
+        height : y * 0.8,
+        resizable : "yes",
+        close_previous : "no",
+        onMessage: (api, message) => {
+          callback(message.content);
+        }
+      });
+    }
+  };
+
+  tinymce.init(editor_config);
+</script>
+@endpush
+

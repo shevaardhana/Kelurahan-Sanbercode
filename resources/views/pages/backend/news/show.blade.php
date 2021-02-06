@@ -28,7 +28,7 @@
                      @endforeach
                 </div>
                 <h5 class="card-text mt-4">Deskripsi : </h5>
-                <p class="card-text">{{ $items->descriptions }}</p>
+                <p class="card-text">{!! $items->descriptions !!}</p>
                 <h5 class="card-title">Kategori/Tags :</h5>
             </div>
         </div>

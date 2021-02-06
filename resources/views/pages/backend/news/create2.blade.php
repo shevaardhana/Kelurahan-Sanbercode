@@ -33,16 +33,6 @@
         <form action="{{ route('news.store')}}" method="POST" enctype="multipart/form-data">
          @csrf
             <div class="form-group">
-                    <label for="user_id">Username Penulis</label>
-                    <select name="user_id" class="form-control" required>
-                        <!-- <option value="">Nama User</option>                        -->
-                            <option value="{{ $user->id}}">
-                              {{ $user->name}}
-                            </option>
-                    </select>
-            </div>
-
-            <div class="form-group">
                 <label for="title">Judul</label>
                 <input type="text" class="form-control" name="title" placeholder="Judul" value="{{ old('title')}}" required>
             </div>

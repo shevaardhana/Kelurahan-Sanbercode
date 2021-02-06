@@ -30,9 +30,11 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse ($items as $item)
+                    <?php $no = 0;?>
+                        @forelse ($items as $item)
+                    <?php $no++ ;?>
                     <tr>
-                        <td>{{ $item->id }}</td>
+                        <td>{{ $no }}</td>
                         <td>{{ $item->news->title }}</td>                       
                         <td style="text-align:center;">
                             <img src="{{ Storage::url($item->image) }}" alt="" style="width:150px" class="img-thumbnail"> 
@@ -59,7 +61,7 @@
                     </tr>
                 @endforelse                
             </tbody>
-            </table>
+        </table>
         </div>
     </div>
 </div>
