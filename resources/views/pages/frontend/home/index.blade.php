@@ -5,6 +5,7 @@
 @section('content')
 @include ('includes.frontend.jumbotron')
 @include ('includes.frontend.sambutan')
+
 <div class="content mt-5 p-5">
         <div class="row">
             <div class="col-3">
@@ -121,83 +122,36 @@
             <!-- berita -->
             <div class="col-9">
                 <div class="row d-flex justify-content-center" id="news">
-                    <h2>Berita Terkini</h2>
+                    <h2 class="mb-5">Berita Terkini</h2>
                 </div>
                 <div class="row">               
-                @foreach ($items as $item)                 
-                    <div class="col-lg-6">
-                        <div class="card shadow mb-4 card-img-home" style="">
-                            <img src="{{ $item->galleries->count() ? Storage::url($item->galleries->first()->image) : '' }}" class="card-img-top" alt="{{ $item->title }}">
-                            <div class="card-body" style="height: 300px;">
-                              <h5 class="card-title">{{ $item->title }}</h5>                          
-                              <p class="card-title"> Ditulis Oleh : <strong>{{ $item->user->name }}</strong>  </p>
-                              <p class="card-text">
-                                <i class="fas fa-calendar-week"></i>
-                               {{ \Carbon\Carbon::create($item->date)->isoFormat('dddd, D MMMM Y')}} 
-                              </p>
-                              <p class="card-text">{!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}</p>                              
+                    @foreach ($items as $item)                 
+                        <div class="col-md-6">
+                            <div class="card shadow mb-4 card-img-home" style="">
+                                <img src="{{ $item->galleries->count() ? Storage::url($item->galleries->first()->image) : '' }}" class="card-img-top" alt="{{ $item->title }}">
+                                <div class="card-body" style="height: 300px;">
+                                <h5 class="card-title">{{ $item->title }}</h5>                          
+                                <p class="card-title"> Ditulis Oleh : <strong>{{ $item->user->name }}</strong>  </p>
+                                <p class="card-text">
+                                    <i class="fas fa-calendar-week"></i>
+                                {{ \Carbon\Carbon::create($item->date)->isoFormat('dddd, D MMMM Y')}} 
+                                </p>
+                                <p class="card-text">{!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}</p>                              
+                                </div>
+                                <div class="d-flex justify-content-center" style="padding-bottom: 10px;">
+                                        <a href=" {{ route('detail.berita', $item->slug) }} " 
+                                        class="btn btn-primary btnPrimary"  target="_blank" 
+                                        >
+                                        Baca Selengkapnya ...
+                                        </a>
+                                </div>
                             </div>
-                            <div class="d-flex justify-content-center" style="padding-bottom: 10px;">
-                                    <a href=" {{ route('detail.berita', $item->slug) }} " 
-                                       class="btn btn-primary btnPrimary"  target="_blank" 
-                                       >
-                                       Baca Selengkapnya ...
-                                    </a>
-                              </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
 
-                    <!-- <div class="col-lg-6">
-                        <div class="card mb-4" style="">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary btnPrimary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card mb-4" style="">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary btnPrimary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card mb-4" style="">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary btnPrimary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card mb-4" style="">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary btnPrimary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card mb-4" style="">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary btnPrimary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div> -->
+                <div class="container pagination-link d-flex justify-content-center" style="margin-top: 20px; margin-bottom: 40px;">
+                    {{ $items->links() }}
                 </div>
             </div>
         </div>
