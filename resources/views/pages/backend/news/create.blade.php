@@ -32,6 +32,17 @@
     <div class="card-body">
         <form action="{{ route('news.store')}}" method="POST" enctype="multipart/form-data">
          @csrf
+         <div class="form-group">
+            <label for="user_id">Nama User</label>
+            <select name="user_id" class="form-control" required>
+                <option value="">Pilih User</option>
+                @foreach ($users as $user)
+                    <option value="{{ $user->id }}">
+                        {{ $user->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
             <div class="form-group">
                 <label for="title">Judul</label>
                 <input type="text" class="form-control" name="title" placeholder="Judul" value="{{ old('title')}}" required>

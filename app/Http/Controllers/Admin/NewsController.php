@@ -8,6 +8,7 @@ use App\Models\News;
 use App\Models\Image;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\User;
 
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -22,7 +23,7 @@ class NewsController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -44,7 +45,10 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('pages.backend.news.create');
+        $users = User::all();
+        return view('pages.backend.news.create',[
+            'users' => $users
+        ]);
     }
 
     /**

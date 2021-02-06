@@ -15,10 +15,9 @@ class CreateStrukturOrganisasiTable extends Migration
     {
         Schema::create('struktur_organisasi', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('image');
+            $table->text('image');
+            $table->softDeletes();
             $table->timestamps();
-
-
         });
     }
 

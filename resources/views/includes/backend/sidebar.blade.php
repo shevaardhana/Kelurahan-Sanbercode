@@ -61,7 +61,7 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href=" {{route('pegawaiprofile.index')}} ">Data Penduduk</a>
+                <a class="collapse-item" href=" {{route('penduduk.index')}} ">Data Penduduk</a>
                 <a class="collapse-item" href="#">Data Wilayah</a>
             </div>
         </div>

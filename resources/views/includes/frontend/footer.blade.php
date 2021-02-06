@@ -1,5 +1,5 @@
-<div class="footer">
+<div class="footer fixed-bottom" >
         <div class="text-center p-3 mt-3">
-            © 2021 Copyright | <span>All Right Reserved :  Kelurahan Sanbercode</span>          
+            © 2021 Copyright | <span>All Right Reserved :  Kelurahan Sanbercode</span>
           </div>
 </div>

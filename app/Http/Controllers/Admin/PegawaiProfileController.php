@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Http\Requests\PegawaiProfileRequest;
 use App\Models\PegawaiProfile;
+use App\User;
 use RealRashid\SweetAlert\Facades\Alert;
-
 
 class PegawaiProfileController extends Controller
 {
@@ -29,9 +29,12 @@ class PegawaiProfileController extends Controller
      */
     public function index()
     {
-        $items = PegawaiProfile::all();
+        // $items = PegawaiProfile::all();
+        $items = PegawaiProfile::with(['user'])->get();
+        // dd($items);
 
-        return view('pages.backend.pegawaiprofile.index', compact('items'));
+        return view('pages.backend.pegawaiprofile.index', [
+            'items' => $items]);
     }
 
     /**
@@ -41,7 +44,11 @@ class PegawaiProfileController extends Controller
      */
     public function create()
     {
-        return view('pages.backend.pegawaiprofile.create');
+        $users = User::all();
+        // dd($users);
+        return view('pages.backend.pegawaiprofile.create', [
+            'users' => $users
+        ]);
     }
 
     /**
@@ -53,6 +60,10 @@ class PegawaiProfileController extends Controller
     public function store(PegawaiProfileRequest $request)
     {
         $data = $request->all();
+        $data['photo'] = $request->file('photo')->store(
+            'assets/pegawai', 'public'
+        );
+
         PegawaiProfile::create($data);
 
         Alert::success('Success', 'Berhasil menambahkan Profil Pegawai terbaru');
@@ -79,8 +90,12 @@ class PegawaiProfileController extends Controller
      */
     public function edit($id)
     {
-        $items = PegawaiProfile::findOrFail($id);
-        return view('pages.backend.pegawaiprofile.edit', compact('items'));
+        $item = PegawaiProfile::findOrFail($id);
+        $users = User::all();
+        return view('pages.backend.pegawaiprofile.edit', [
+            'item' => $item,
+            'users' => $users
+            ]);
     }
 
     /**
@@ -93,6 +108,9 @@ class PegawaiProfileController extends Controller
     public function update(PegawaiProfileRequest $request, $id)
     {
         $data = $request->all();
+        $data['photo'] = $request->file('photo')->store(
+            'assets/pegawai', 'public'
+        );
 
         $items = PegawaiProfile::findOrFail($id);
         $items->update($data);

@@ -12,7 +12,7 @@
     </div>
 
     <div class="d-sm-flex d-flex justify-content-center">
-        <h1 class="h3 mb-0 text-gray-800">Daftar Penduduk</h1>
+        <h1 class="h3 mb-0 text-gray-800">Data Penduduk</h1>
     </div>
 
     <div class="row">
@@ -28,10 +28,10 @@
 
             <div class="table-responsive">
                 <table id="tableNews" class="table table-bordered table-hover" width="100%" cellspacing="0" data-form="deleteForm">
-                    <thead class="thead-dark">
+                    <thead class="thead-dark text-center">
                         <tr>
                             <th style="width: 5%;">NO</th>
-                            <th style="width: 15%;">Nama Desa</th>
+                            <th style="width: 15%;">RT/Lingkungan</th>
                             <th style="width: 10%;">Jumlah Pria</th>
                             <th style="width: 10%;">Jumlah Wanita</th>
                             <th style="width: 10%;">Jumlah Kematian</th>

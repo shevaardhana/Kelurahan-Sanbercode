@@ -1,5 +1,4 @@
 @extends('layouts.frontend.default')
-@section('title', 'Detail Berita')
 
 @section('content')
 <!-- Breadcrumb -->
