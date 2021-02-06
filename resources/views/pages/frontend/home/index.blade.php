@@ -123,17 +123,17 @@
                 <div class="row d-flex justify-content-center" id="news">
                     <h2>Berita Terkini</h2>
                 </div>
-                <div class="row">  
+                <div class="row">               
                 @foreach ($items as $item)                 
                     <div class="col-lg-6">
                         <div class="card shadow mb-4 card-img-home" style="">
                             <img src="{{ $item->galleries->count() ? Storage::url($item->galleries->first()->image) : '' }}" class="card-img-top" alt="{{ $item->title }}">
                             <div class="card-body" style="height: 300px;">
-                              <h5 class="card-title">{{ $item->title }}</h5>
-                              <p class="card-title"> Ditulis Oleh : </p>
+                              <h5 class="card-title">{{ $item->title }}</h5>                          
+                              <p class="card-title"> Ditulis Oleh : {{ $item->user->name }} </p>
                               <p class="card-text">
                                 <i class="fas fa-calendar-week"></i>
-                                {{ $item->date }}
+                               {{ \Carbon\Carbon::create($item->date)->isoFormat('dddd, D MMMM Y')}} 
                               </p>
                               <p class="card-text">{!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}</p>                              
                             </div>

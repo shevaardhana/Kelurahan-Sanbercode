@@ -7,9 +7,9 @@
 
 <div class="">
       <div class="row d-flex justify-content-between">
-        <div class="table-responsive">
+        <div class="table-responsive" style="margin-bottom: 100px;">
           <table class="table table-bordered table-hover" width="100%" cellspacing="0">
-                    <thead class="thead-dark text-center">
+                    <thead class="thead-dark text-center" >
                       <tr>
                         <th style="width: 10px">No</th>
                         <th>Nama Lengkap</th>

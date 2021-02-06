@@ -7,23 +7,23 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav text-uppercase mx-auto">
-                <li class="nav-item active">
+              <ul class="nav navbar-nav text-uppercase mx-auto">
+                <li class="nav-item">
                   <a class="nav-link mr-5 text-white @if(Request::is('/')) active @endif"
                      href=" {{ route('home') }} ">Beranda <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mr-5 text-white"
+                    <a class="nav-link dropdown-toggle mr-5 text-white  @if(Request::is('detailpegawaiprofile')) active @endif"
                       href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Profile
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href=" {{ route('detail.pegawai') }} ">Profile</a>
-                      <a class="dropdown-item" href=" {{ route('detail.penduduk') }} ">Struktur Organisasi</a>
+                      <a class="dropdown-item" href="#">Struktur Organisasi</a>
                     </div>
                   </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white"
+                  <a class="nav-link text-white @if(Request::is('detailpenduduk')) active @endif"
                      href="{{ route('detail.penduduk') }}">Data Penduduk</a>
                 </li>
               </ul>

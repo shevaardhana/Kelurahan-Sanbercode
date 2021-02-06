@@ -42,7 +42,12 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\PegawaiProfile', 'user_id', 'id');
     }
 
-    public function author()
+    // public function author()
+    // {
+    //     return $this->hasMany('App\Models\News', 'user_id', 'id');
+    // }
+
+    public function berita()
     {
         return $this->hasMany('App\Models\News', 'user_id', 'id');
     }
