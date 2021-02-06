@@ -19,13 +19,13 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href=" {{ route('detail.pegawai') }} ">Data Pegawai</a>
-                      <a class="dropdown-item" href=" {{ route('detail.penduduk') }} ">Struktur Organisasi</a>
+                      <a class="dropdown-item" href="  ">Struktur Organisasi</a>
                       <a class="dropdown-item" href="#">Profile</a>
                     </div>
                   </li>
                 <li class="nav-item">
                   <a class="nav-link text-white"
-                     href="#">Data Penduduk</a>
+                     href="{{ route('detail.penduduk') }}">Data Penduduk</a>
                 </li>
               </ul>
             </div>

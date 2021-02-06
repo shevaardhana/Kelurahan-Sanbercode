@@ -49,14 +49,6 @@
                         @endforelse
                     </tbody>
                   </table>
-                <div class="card-body">
-                    <p>Kategori/Tags :
-                        <button type="button" class="btn btn-success">Covid19</button>
-                        <button type="button" class="btn btn-success">PKH</button>
-                        <button type="button" class="btn btn-success">Kemensos</button>
-                    </p>
-                </div>
-
         </div>
       </div>
 </div>
