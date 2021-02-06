@@ -1,4 +1,5 @@
 @extends('layouts.backend.master')
+@section('title', 'Tambah Data Penduduk')
 
 @section('title', 'Tambah Penduduk')
 @section('content')
