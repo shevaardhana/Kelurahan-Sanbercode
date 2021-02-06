@@ -84,7 +84,7 @@
 
         <footer style="margin-top: 50px;">
           <div class="text-center p-3 mt-3" style="font-size:16px;">
-            ©2021 Copyright | <span>All Right Reserved :  Kelurahan Sanbercode</span>          
+            ©2021 Copyright | <span>All Right Reserved :  Kelurahan Sanbercode</span>
           </div>
         </footer>
     </div>

@@ -39,22 +39,22 @@
                 </div>
                 <div class="form-group">
                     <label for="nama_lengkap">Nama Lengkap</label>
-                    <input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap" 
+                    <input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap"
                            value="{{ old('nama_lengkap') }}" required>
                 </div>
                 <div class="form-group">
                     <label for="nip">NIP</label>
-                    <input type="text" class="form-control" name="nip" placeholder="NIP" 
+                    <input type="text" class="form-control" name="nip" placeholder="NIP"
                            value="{{ old('nip') }}" required>
                 </div>
                 <div class="form-group">
                     <label for="pangkat">Pangkat</label>
-                    <input type="text" class="form-control" name="pangkat" placeholder="Pangkat" 
+                    <input type="text" class="form-control" name="pangkat" placeholder="Pangkat"
                            value="{{ old('pangkat') }}" required>
                 </div>
                 <div class="form-group">
                     <label for="jabatan">Jabatan</label>
-                    <input type="text" class="form-control" name="jabatan" placeholder="Jabatan" 
+                    <input type="text" class="form-control" name="jabatan" placeholder="Jabatan"
                            value="{{ old('jabatan') }}" required>
                 </div>
                 <div class="form-group">
@@ -63,7 +63,7 @@
                 </div>
                 <div class="form-group">
                     <label for="no_telp">No. Telp.</label>
-                    <input type="text" class="form-control" name="no_telp" placeholder="Nomor Telepon" 
+                    <input type="text" class="form-control" name="no_telp" placeholder="Nomor Telepon"
                            value="{{ old('no_telp') }}" required>
                 </div>
                 <div class="form-group">
