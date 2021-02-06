@@ -18,7 +18,7 @@
                       Profile
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href=" {{ route('detail.pegawai') }} ">Profile</a>
+                      <a class="dropdown-item" href=" {{ route('detail.pegawai') }} ">Data Pegawai</a>
                       <a class="dropdown-item" href="#">Struktur Organisasi</a>
                     </div>
                   </li>

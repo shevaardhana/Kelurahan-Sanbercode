@@ -130,7 +130,7 @@
                             <img src="{{ $item->galleries->count() ? Storage::url($item->galleries->first()->image) : '' }}" class="card-img-top" alt="{{ $item->title }}">
                             <div class="card-body" style="height: 300px;">
                               <h5 class="card-title">{{ $item->title }}</h5>                          
-                              <p class="card-title"> Ditulis Oleh : {{ $item->user->name }} </p>
+                              <p class="card-title"> Ditulis Oleh : <strong>{{ $item->user->name }}</strong>  </p>
                               <p class="card-text">
                                 <i class="fas fa-calendar-week"></i>
                                {{ \Carbon\Carbon::create($item->date)->isoFormat('dddd, D MMMM Y')}} 

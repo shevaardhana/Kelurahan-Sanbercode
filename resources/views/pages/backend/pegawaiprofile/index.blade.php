@@ -33,11 +33,7 @@
                         <tr>
                             <th style="width: 5%;">NO</th>
                             <th>Nama Lengkap</th>
-                            <th>NIP</th>
-                            <th>Pangkat</th>
                             <th>Jabatan</th>
-                            <th>Alamat</th>
-                            <th>No Telpon</th>
                             <th>Photo</th>
                             <th style="width: 18%;">Action</th>
                         </tr>
@@ -48,12 +44,8 @@
                     <?php $no++ ;?>
                         <tr>
                             <td>{{ $no }}</td>
-                            <td>{{ $item->nama_lengkap }}</td>
-                            <td>{{ $item->nip }}</td>
-                            <td>{{ $item->pangkat }}</td>
-                            <td>{{ $item->jabatan }}</td>
-                            <td>{{ $item->alamat }}</td>
-                            <td>{{ $item->no_telp }}</td>
+                            <td>{{ $item->nama_lengkap }}</td>                           
+                            <td>{{ $item->jabatan }}</td>                         
                             <td style="text-align:center;">
                                 <img src="{{ Storage::url($item->photo) }}"
                                      alt="" style="width:150px; height:150px;" class="img-thumbnail">

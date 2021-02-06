@@ -6,7 +6,7 @@
 <div class="container-fluid mt-5 " style="padding-top: 80px; padding-bottom:70px; padding-left:50px; padding-right:50px;">
 
     <div class="d-sm-flex d-flex justify-content-center">
-        <h1 class="h3 mb-0 text-gray-800">Daftar Data Penduduk</h1>
+        <h1 class="h3 mb-0 text-gray-800 mb-5">Rekapitulasi Data Penduduk</h1>
     </div>
 
     <div class="row ">
@@ -15,7 +15,7 @@
                     <thead class="thead-dark text-center">
                         <tr>
                             <th style="width: 5%;">NO</th>
-                            <th>Nama Desa</th>
+                            <th>RT/Lingkungan</th>
                             <th>Jumlah Pria</th>
                             <th>Jumlah Wanita</th>
                             <th>Jumlah Kematian</th>
@@ -29,11 +29,11 @@
                     <?php $no++ ;?>
                     <tr>
                         <td>{{ $no }}</td>
-                        <td>{{ $item->nama_desa }}</td>
-                        <td>{{ $item->jumlah_pria }}</td>
-                        <td>{{ $item->jumlah_wanita }}</td>
-                        <td>{{ $item->jumlah_kematian }}</td>
-                        <td>{{ $item->jumlah_kelahiran }}</td>
+                        <td>{{ $item->nama_desa }} </td>
+                        <td>{{ $item->jumlah_pria }} orang</td>
+                        <td>{{ $item->jumlah_wanita }} orang</td>
+                        <td>{{ $item->jumlah_kematian }} orang</td>
+                        <td>{{ $item->jumlah_kelahiran }} orang</td>
                         <td>{{ $item->keterangan }}</td>
                     </tr>
                     @empty

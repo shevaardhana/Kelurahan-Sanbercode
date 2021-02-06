@@ -131,7 +131,7 @@
         <div class="col-8 contentBerita">            
             <div class="card mb-3 p-2">
                 <h5 class="card-title text-center">{{ $item->title }}</h5>
-                <p class="card-text text-center">Ditulis Oleh :</p>
+                <p class="card-text text-center">Ditulis Oleh :<strong>{{ $item->user->name }}</strong></p>
                 <p class="card-text text-center">
                     <i class="fas fa-calendar-week"></i>                  
                     {{ \Carbon\Carbon::create($item->date)->isoFormat('dddd, D MMMM Y')}}                

@@ -5,29 +5,13 @@
 
 <div class="container-fluid mt-5 " style="padding-top: 80px; padding-bottom:70px; padding-left:50px; padding-right:50px;">
 
-<<<<<<< HEAD
-<div class="">
-      <div class="row d-flex justify-content-between">
-        <div class="table-responsive" style="margin-bottom: 100px;">
-          <table class="table table-bordered table-hover" width="100%" cellspacing="0">
-                    <thead class="thead-dark text-center" >
-                      <tr>
-                        <th style="width: 10px">No</th>
-                        <th>Nama Lengkap</th>
-                        <th>NIP</th>
-                        <th>Pangkat</th>
-                        <th>Jabatan</th>
-                        <th>Alamat</th>
-                        <th>No. Telepon</th>
-                        <th>Photo</th>
-                      </tr>
-=======
+<div class="">     
     <div class="d-sm-flex d-flex justify-content-center">
-        <h1 class="h3 mb-0 text-gray-800">Daftar Pegawai</h1>
+        <h1 class="h3 mb-0 text-gray-800 mb-5">Rekapitulasi Data Pegawai</h1>
     </div>
 
-    <div class="row ">
-            <div class="table-responsive">
+    <div class="row">
+            <div class="table-responsive" style="margin-bottom:50px;">
                 <table id="tablePegawai" class="table table-bordered table-hover" width="100%" cellspacing="0" data-form="deleteForm">
                     <thead class="thead-dark text-center">
                         <tr>
@@ -37,10 +21,9 @@
                             <th>Pangkat</th>
                             <th>Jabatan</th>
                             <th>Alamat</th>
-                            <th>No Telpon</th>
+                            <th>No. Telepon</th>
                             <th>Photo</th>
                         </tr>
->>>>>>> 0b110b8cdbe516b45cf2fed7f7555cc4e1f32395
                     </thead>
                     <tbody>
                     <?php $no = 0;?>
