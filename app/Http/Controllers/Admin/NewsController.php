@@ -32,6 +32,7 @@ class NewsController extends Controller
     public function index()
     {
         $items = News::all();
+        // $items = News::with(['user'])->get();
 
         return view('pages.backend.news.index', [
             'items' => $items
