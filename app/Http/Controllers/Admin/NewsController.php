@@ -10,6 +10,8 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\User;
 
+use Auth;
+
 use RealRashid\SweetAlert\Facades\Alert;
 
 class NewsController extends Controller
@@ -47,8 +49,11 @@ class NewsController extends Controller
     public function create()
     {
         $users = User::all();
+        $user = Auth::user();
+        // dd($user);
         return view('pages.backend.news.create',[
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 

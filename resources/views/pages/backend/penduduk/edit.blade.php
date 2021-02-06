@@ -1,6 +1,6 @@
 @extends('layouts.backend.master')
 
-{{-- @section('title', 'Ubah Berita') --}}
+@section('title', 'Ubah Penduduk')
 @section('content')
 
 <!-- Begin Page Content -->

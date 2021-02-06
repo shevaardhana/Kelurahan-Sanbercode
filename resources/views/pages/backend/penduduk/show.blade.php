@@ -1,6 +1,6 @@
 @extends ('layouts.backend.master')
 
-{{-- @section('title', 'Detail Berita') --}}
+@section('title', 'Detail Berita')
 
 @section('content')
     <div class="card p-5">

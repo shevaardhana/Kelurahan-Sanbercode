@@ -7,7 +7,7 @@
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item active" aria-current="page">Detail Penduduk</li>
+                  <li class="breadcrumb-item active" aria-current="page">Data Penduduk Kelurahan Sanbercode</li>
                 </ol>
             </nav>
         </div>
@@ -44,7 +44,7 @@
                             </tr>
                             @empty
                                 <tr>
-                                    <td colspan="4" align="center">No Data</td>
+                                    <td colspan="4" class="text-center">No Data</td>
                                 </tr>
                         @endforelse
                     </tbody>
