@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @include ('includes.backend.meta')
+    @include ('includes.backend.meta')   
     @stack('before-style')
     @include ('includes.backend.styles')
     @stack('after-style')

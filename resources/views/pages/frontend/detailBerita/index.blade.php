@@ -141,8 +141,8 @@
                         <button type="button" class="btn btn-success">PKH</button> 
                         <button type="button" class="btn btn-success">Kemensos</button>  
                 </p>  
-                <img src="{{ asset('frontend/img/1.jpeg') }}" class="card-img-top" alt="gambar1" style="height: 350px;">
-               <div class="row mt-1">
+                <!-- <img src="{{ asset('frontend/img/1.jpeg') }}" class="card-img-top" alt="gambar1" style="height: 350px;"> -->
+               <!-- <div class="row mt-1">
                    <div class="col-4">
                        <img src="{{ asset('frontend/img/1.jpeg') }}" alt="" class="img-fluid img-thumbnail">
                    </div>
@@ -152,7 +152,30 @@
                     <div class="col-4">
                         <img src="{{ asset('frontend/img/1.jpeg') }}" alt="" class="img-fluid img-thumbnail">
                     </div>
-                </div>
+                </div> -->
+                @if($item->galleries->count())
+                    <div class="gallery">
+                        <div class="xzoom-container">
+                            <img 
+                            src="{{ Storage::url($item->galleries->first()->image) }}" 
+                            class="xzoom" id="xzoom-default"
+                            xoriginal="{{ Storage::url($item->galleries->first()->image) }}"
+                            >
+                        </div>
+                        <div class="xzoom-thumbs d-flex justify-content-center">
+                        @foreach ($item->galleries as $gallery )
+                            <a href="{{Storage::url($gallery->image)}}">
+                                <img 
+                                    src="{{Storage::url($gallery->image)}}" 
+                                    class="xzoom-gallery mr-2 mt-3 mb-5" width="128"
+                                    xpreview="{{Storage::url($gallery->image)}}"
+                                    style="height: 100px; border: 1px solid #d8c292; border-radius:5px;"
+                                >
+                            </a>
+                        @endforeach                                   
+                        </div>
+                    </div>
+                @endif
                 <div class="card-body">                                     
                     <p class="card-text">{!! $item->descriptions !!} </p>
                 </div>
@@ -162,3 +185,21 @@
       </div>
 </div>
 @endsection
+
+@push('before-styles')
+<link rel="stylesheet" href="{{ asset('frontend/libraries/xzoom/xzoom.css') }}"/>
+@endpush
+
+@push('after-scripts')
+<script src="{{ asset('frontend/libraries/xzoom/xzoom.min.js') }}"></script>
+<script>
+        $(document).ready(function() {
+            $('.xzoom, .xzoom-gallery').xzoom({
+                zoomWidth: 500,
+                title: false,
+                tint: '#555',            
+                Xoffset: 15
+            });
+        });
+</script>
+@endpush
