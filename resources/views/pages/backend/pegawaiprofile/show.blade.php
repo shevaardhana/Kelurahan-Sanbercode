@@ -1,4 +1,5 @@
 @extends ('layouts.backend.master')
+@section('title', 'Detail Profil Pegawai')
 
 {{-- @section('title', 'Detail Berita') --}}
 
@@ -14,7 +15,7 @@
             <div class="col-4">
                 <div class="card" style="">
                     <img class="card-img-top" src="{{ Storage::url($items->photo) }}" alt="Card image cap" style="width:330px; height:330px;">
-                </div>  
+                </div>
             </div>
 
             <div class="col-8">
@@ -27,13 +28,13 @@
                         <li class="list-group-item">NIP: {{ $items->nip }}</li>
                         <li class="list-group-item">Alamat: {{ $items->alamat }}</li>
                         <li class="list-group-item">Jabatan : {{$items->jabatan}}</li>
-                        <li class="list-group-item">No. Telepon : {{ $items->no_telp }}</li>                
+                        <li class="list-group-item">No. Telepon : {{ $items->no_telp }}</li>
                     </ul>
-                </div>  
+                </div>
             </div>
         </div>
 
-            
+
     </div>
 @endsection
 

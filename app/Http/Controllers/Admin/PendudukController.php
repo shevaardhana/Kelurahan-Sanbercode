@@ -20,7 +20,7 @@ class PendudukController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -65,8 +65,8 @@ class PendudukController extends Controller
      */
     public function show($id)
     {
-        $items = Penduduk::findOrFail($id);
-        return view('pages.backend.penduduk.show', compact('items'));
+        // $items = Penduduk::findOrFail($id);
+        // return view('pages.backend.penduduk.show', compact('items'));
     }
 
     /**

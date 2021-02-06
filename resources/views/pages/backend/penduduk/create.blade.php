@@ -1,4 +1,5 @@
 @extends('layouts.backend.master')
+@section('title', 'Tambah Data Penduduk')
 
 @section('content')
 <!-- Begin Page Content -->
