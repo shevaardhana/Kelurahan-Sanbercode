@@ -24,10 +24,14 @@ class PegawaiProfileRequest extends FormRequest
     public function rules()
     {
         return [
+            'user_id' => 'required|integer|exists:users,id',
             'nama_lengkap' => 'required',
+            'nip' => 'required',
+            'pangkat' => 'required',
+            'jabatan' => 'required',
             'alamat' => 'required',
             'no_telp' => 'required',
-            'jabatan' => 'required'
+            'photo' => 'required|image'
         ];
     }
 }

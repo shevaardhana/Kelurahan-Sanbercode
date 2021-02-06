@@ -1,4 +1,5 @@
 @extends('layouts.backend.master')
+@section('title', 'Profile Pegawai')
 
 @section('content')
     <!-- Begin Page Content -->
@@ -27,35 +28,36 @@
             @endif
 
             <div class="table-responsive">
-                <table id="tableNews" class="table table-bordered table-hover" width="100%" cellspacing="0" data-form="deleteForm">
-                    <thead class="thead-dark">
+                <table id="tablePegawai" class="table table-bordered table-hover" width="100%" cellspacing="0" data-form="deleteForm">
+                    <thead class="thead-dark text-center">
                         <tr>
                             <th style="width: 5%;">NO</th>
-                            <th>Nama Lengkap</th>
-                            <th style="width: 15%;">Alamat</th>
-                            <th>Nomor Telpon</th>
-                            <th style="width: 15%;">Jabatan</th>
+                            <th>Nama Lengkap</th>                      
+                            <th>Jabatan</th>                          
+                            <th>Photo</th>
                             <th style="width: 18%;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php $no = 0;?>
-                    @forelse ($items as $value)
+                    @forelse ($items as $item)
                     <?php $no++ ;?>
                         <tr>
                             <td>{{ $no }}</td>
-                            <td>{{ $value->nama_lengkap }}</td>
-                            <td>{{ $value->alamat }}</td>
-                            <td>{{ $value->no_telp }}</td>
-                            <td>{{ $value->jabatan }}</td>
+                            <td>{{ $item->nama_lengkap }}</td>                          
+                            <td>{{ $item->jabatan }}</td>
                             <td style="text-align:center;">
-                                <a href="{{ route('pegawaiprofile.show', $value->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="detail">
+                                <img src="{{ Storage::url($item->photo) }}" 
+                                     alt="" style="width:150px; height:150px;" class="img-thumbnail"> 
+                            </td>
+                            <td style="text-align:center;">
+                                <a href="{{ route('pegawaiprofile.show', $item->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="detail">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="{{ route('pegawaiprofile.edit', $value->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="edit">
+                                <a href="{{ route('pegawaiprofile.edit', $item->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="edit">
                                     <i class="fa fa-pencil-alt"></i>
                                 </a>
-                                <form action="{{ route('pegawaiprofile.destroy', $value->id) }}"
+                                <form action="{{ route('pegawaiprofile.destroy', $item->id) }}"
                                     method="POST" class="d-inline form-delete">
                                     @csrf
                                     @method('delete')
@@ -88,7 +90,7 @@
     <script src="{{ asset('sbadmin2/plugins/datatables-bs4/js/dataTables.bootstrap4.js ') }}"></script>
     <script>
     $(function () {
-        $("#tableNews").DataTable();
+        $("#tablePegawai").DataTable();
     });
     </script>
 @endpush

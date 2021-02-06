@@ -1,5 +1,5 @@
 @extends('layouts.backend.master')
-@section('title', 'Ubah Gambar')
+@section('title', 'Ubah Gambar Organisasi')
 @section('content')
 
 <!-- Begin Page Content -->
@@ -7,7 +7,7 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h1 class="h3 mb-0 text-gray-800">Ubah struktur</h1>
+  <h1 class="h3 mb-0 text-gray-800">Ubah Struktur Organisasi</h1>
 </div>
 
 @if ($errors->any())
@@ -26,11 +26,10 @@
         <form action="{{ route('struktur.update', $item->id)}}" method="POST" enctype="multipart/form-data">
          @method('PUT')
          @csrf
-
-           <div class="form-group">
+            <div class="form-group">
                 <label for="image">image</label>
                 <input type="file" class="form-control" name="image" placeholder="image" required>
-           </div>
+            </div>
          <button type="submit" class="btn btn-primary btn-block">Ubah</button>
         </form>
     </div>

@@ -16,13 +16,15 @@ class CreatePegawaiProfilesTable extends Migration
         Schema::create('pegawai_profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama_lengkap');
-            $table->string('alamat');
+            $table->string('nip');
+            $table->string('pangkat');
+            $table->string('jabatan');            
+            $table->longText('alamat');
             $table->string('no_telp');
-            $table->string('jabatan');
-            $table->unsignedBigInteger('user_id');
+            $table->text('photo');            
+            $table->integer('user_id');
+            $table->softDeletes();
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

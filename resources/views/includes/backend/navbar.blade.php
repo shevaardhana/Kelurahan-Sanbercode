@@ -9,7 +9,7 @@
 <form
     class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
     <div class="input-group">  
-        <h2>Kelurahan Sanbercode</h2>
+    logged in as username <strong style="margin-left:10px;"> {{ auth()->user()->name }} </strong>
     </div>
 </form>
 
@@ -44,9 +44,20 @@
     <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::user()->name}}</span>
+            <span class="mr-2 d-none d-lg-inline text-gray-600 small text-uppercase">
+                    {{ Auth::user()->pegawai_profile->nama_lengkap ?? 'nama lengkap belum di isi'}} 
+                <strong>
+                    ({{ Auth::user()->pegawai_profile->jabatan ?? 'jabatan belum di isi' }})
+                </strong>
+                
+            </span>
+            <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                
+            </span>
+            
             <img class="img-profile rounded-circle"
-                src="{{ asset('sbadmin2/img/undraw_profile.svg') }}">
+                src="{{ Storage::url(Auth::user()->pegawai_profile->photo ?? 'no data' ) }}" style="object-fit:cover;">
+                <!-- src="{{ asset('sbadmin2/img/undraw_profile.svg') }}"> -->
         </a>
         <!-- Dropdown - User Information -->
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

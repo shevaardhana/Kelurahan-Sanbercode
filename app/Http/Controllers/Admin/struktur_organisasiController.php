@@ -31,7 +31,7 @@ class struktur_organisasiController extends Controller
     public function index()
     {
         $items = struktur_organisasi::all();
-        return view('pages.backend.struktur.index',compact('items'));
+        return view('pages.backend.struktur.index', compact('items'));
     }
 
     /**
@@ -50,11 +50,11 @@ class struktur_organisasiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(struktur_organisasiRequest $request)
     {
         $data = $request->all();
         $data['image'] = $request->file('image')->store(
-            'assets/image', 'public'
+            'assets/organisasi', 'public'
         );
 
         struktur_organisasi::create($data);
@@ -96,7 +96,7 @@ class struktur_organisasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(struktur_organisasiRequest $request, $id)
     {
         $data = $request->all();
         $data['image'] = $request->file('image')->store(

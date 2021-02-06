@@ -1,5 +1,5 @@
 @extends('layouts.backend.master')
-@section('title', 'Tambah Gambar')
+@section('title', 'Tambah Gambar Organisasi')
 @section('content')
 
 <!-- Begin Page Content -->
@@ -7,7 +7,7 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h1 class="h3 mb-0 text-gray-800">Tambah Gambar</h1>
+  <h1 class="h3 mb-0 text-gray-800">Tambah Gambar Organisasi</h1>
 </div>
 
 @if ($errors->any())
