@@ -51,4 +51,8 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\News', 'user_id', 'id');
     }
+
+    // public function  news(){
+    //     return $this->hasMany('App\Models', 'user_id');
+    // }
 }

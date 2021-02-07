@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\NewsRequest;
 use App\Http\Requests\TagRequest;
-
+use App\User;
 use App\Tag;
 use App\Models\News;
 
@@ -24,7 +24,7 @@ class TagNewsController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +32,7 @@ class TagNewsController extends Controller
      */
     public function index()
     {
-        $items = News::with(['tags'])->get();       
+        $items = News::with(['tags'])->get();
         $news = News::all();
         $tags = Tag::all();
         return view('pages.backend.tags.index', [
@@ -63,10 +63,18 @@ class TagNewsController extends Controller
      */
     public function store(TagRequest $request)
     {
-        $data = $request->all();
-        // dd($TagRequest);
-      
-        Tag::create($data);
+        $tag_array = explode(',', $request["tag_name"]);
+        $tag_ids = [];
+
+        foreach($tag_array as $tag_name) {
+            $tag = Tag::firstOrCreate(["tag_name" => $tag_name]);
+            $tag_ids[] = $tag->id;
+        }
+
+        // $news->tags->sync($tag_ids);
+        // $user = Auth::user();
+        // $user->berita()->save($news);
+;
         Alert::success('Success', 'Berhasil menambahkan kategori Berita');
         return redirect()->route('tags.index');
     }
@@ -91,7 +99,7 @@ class TagNewsController extends Controller
     public function edit($id)
     {
         $item = Tag::findOrFail($id);
-        // dd($item);     
+        // dd($item);
 
         return view('pages.backend.tags.edit', [
             'item' => $item

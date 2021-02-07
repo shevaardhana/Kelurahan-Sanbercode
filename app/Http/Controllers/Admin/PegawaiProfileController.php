@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use App\Http\Requests\PegawaiProfileRequest;
 use App\Models\PegawaiProfile;
 use App\User;
+use Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class PegawaiProfileController extends Controller
@@ -21,7 +22,7 @@ class PegawaiProfileController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -45,9 +46,11 @@ class PegawaiProfileController extends Controller
     public function create()
     {
         $users = User::all();
+        $user = Auth::user();
         // dd($users);
         return view('pages.backend.pegawaiprofile.create', [
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 

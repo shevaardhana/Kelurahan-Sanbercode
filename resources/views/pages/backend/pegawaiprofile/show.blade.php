@@ -26,8 +26,9 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Username : {{ $items->user->name }}</li>
                         <li class="list-group-item">NIP: {{ $items->nip }}</li>
-                        <li class="list-group-item">Alamat: {{ $items->alamat }}</li>
+                        <li class="list-group-item">Pangkat: {{ $items->pangkat }}</li>
                         <li class="list-group-item">Jabatan : {{$items->jabatan}}</li>
+                        <li class="list-group-item">Alamat: {{ $items->alamat }}</li>
                         <li class="list-group-item">No. Telepon : {{ $items->no_telp }}</li>
                     </ul>
                 </div>
