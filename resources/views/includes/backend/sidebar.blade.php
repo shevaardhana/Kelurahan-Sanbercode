@@ -36,7 +36,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('image.index') }}">
+        <a class="nav-link" href="{{ route('tags.index') }}">
         <i class="fas fa-fw fa-folder"></i>
             <span>Kategori/Tags</span></a>
     </li>

@@ -34,6 +34,10 @@ Route::get('/detailpegawaiprofile', 'DetailPegawaiProfileController@index')
 Route::get('/detailpenduduk', 'DetailPendudukController@index')
     ->name('detail.penduduk');
 
+Route::get('/organisasi', 'OrganisasiController@index')
+    ->name('organisasi');
+
+Route::resource('tags', 'Admin\TagNewsController');
 Route::resource('news', 'Admin\NewsController');
 Route::resource('image', 'Admin\ImageController');
 Route::resource('pegawaiprofile', 'Admin\PegawaiProfileController');

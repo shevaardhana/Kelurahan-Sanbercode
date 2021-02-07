@@ -9,7 +9,9 @@
 <form
     class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
     <div class="input-group">
-    logged in as username <strong style="margin-left:10px;"> {{ auth()->user()->name }} </strong>
+    logged in as username <strong style="margin-left:10px;"> 
+        {{ auth()->user()->name }} 
+    </strong>
     </div>
 </form>
 

@@ -13,13 +13,16 @@
                      href=" {{ route('home') }} ">Beranda <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mr-5 text-white  @if(Request::is('detailpegawaiprofile')) active @endif"
+                    <a class="nav-link dropdown-toggle mr-5 text-white  
+                        @if(Request::is('detailpegawaiprofile')) active @endif
+                        || @if(Request::is('organisasi')) active @endif"
+                        
                       href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Profile
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href=" {{ route('detail.pegawai') }} ">Data Pegawai</a>
-                      <a class="dropdown-item" href="#">Struktur Organisasi</a>
+                      <a class="dropdown-item" href=" {{ route('organisasi') }} ">Struktur Organisasi</a>
                     </div>
                   </li>
                 <li class="nav-item">
