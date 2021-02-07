@@ -24,6 +24,7 @@ class NewsRequest extends FormRequest
     public function rules()
     {
         return [
+            'kategori' => 'required|max:255',
             'title' => 'required|max:255',
             'location' => 'required|max:255',
             'descriptions' => 'required',

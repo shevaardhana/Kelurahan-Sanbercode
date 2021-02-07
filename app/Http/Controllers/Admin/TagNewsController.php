@@ -15,6 +15,16 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class TagNewsController extends Controller
 {
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -80,7 +90,12 @@ class TagNewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Tag::findOrFail($id);
+        // dd($item);     
+
+        return view('pages.backend.tags.edit', [
+            'item' => $item
+        ]);
     }
 
     /**
@@ -90,9 +105,15 @@ class TagNewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TagRequest $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $item = Tag::findOrFail($id);
+        $item->update($data);
+
+        Alert::info('Success', 'Berhasil Ubah kategori');
+        return redirect()->route('tags.index');
     }
 
     /**
@@ -106,7 +127,7 @@ class TagNewsController extends Controller
         $item = Tag::findOrFail($id);
         $item->delete();
 
-        Alert::info('Success', 'Berhasil Hapus gambar');
+        Alert::info('Success', 'Berhasil Hapus kategori');
         return redirect()->route('tags.index');
     }
 }

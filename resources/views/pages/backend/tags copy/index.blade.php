@@ -35,7 +35,8 @@
                     <thead class="thead-dark text-center">
                         <tr>
                             <th style="width: 5%;">NO</th>
-                            <th>Tags</th>                         
+                            <th>Tags</th>                            
+                            <th>Judul Berita</th>                           
                             <th style="width: 18%;">Action</th>
                         </tr>
                     </thead>
@@ -45,7 +46,12 @@
                     <?php $no++ ;?>
                         <tr>
                             <td>{{ $no }}</td>
-                            <td>{{ $tag->tag_name }}</td>                                                  
+                            <td>{{ $tag->tag_name }}</td>
+                            <td>
+                            @foreach($tag -> news as $berita)                               
+                                    {{ $berita ->title }}                             
+                            @endforeach
+                            </td>                                                    
                             <td style="text-align:center;">                                
                                 <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="edit">
                                     <i class="fa fa-pencil-alt"></i>
@@ -63,7 +69,7 @@
                     @empty
                         <tr>
                         <td colspan="7" class="text-center">
-                            Belum Ada Kategori
+                            Belum Ada Gambar Berita
                         </td>
                         </tr>
                     @endforelse

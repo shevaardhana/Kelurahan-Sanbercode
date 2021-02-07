@@ -1,19 +1,17 @@
 @extends('layouts.backend.master')
 
-@section('title', 'Buat Berita')
+@section('title', 'Buat Tags')
 @push('after-style')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.6.2/tinymce.min.js"></script>
 @endpush
 
-
 @section('content')
-
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-center mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Form Tambah Berita</h1>
+        <h1 class="h3 mb-0 text-gray-800">Form Tambah Tags</h1>
     </div>
 
     <!-- Munculkan error -->
@@ -30,46 +28,24 @@
   <!-- Card Form tambah berita -->
   <div class="card shadow">
     <div class="card-body">
-        <form action="{{ route('news.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('tags.store')}}" method="POST" enctype="multipart/form-data">
          @csrf
             <div class="form-group">
-                    <label for="user_id">Username Penulis</label>
-                    <select name="user_id" class="form-control" required>
-                        <!-- <option value="">Nama User</option>                        -->
-                            <option value="{{ $user->id}}">
-                              {{ $user->name}}
-                            </option>
-                    </select>
-            </div>
-
-            <div class="form-group">
-                <label for="title">Judul</label>
-                <input type="text" class="form-control" name="title" placeholder="Judul" value="{{ old('title')}}" required>
-            </div>
-            <div class="form-group">
-                  <label for="kategori">Kategori</label>
-                  <select name="kategori" class="form-control" required>
-                    @foreach ($tags as $tag)
-                        <option value="{{ $tag->tag_name }}">
-                            {{ $tag->tag_name }}
+                <label for="news_id">Judul Berita</label>
+                <select name="news_id" class="form-control" required>
+                    <option value="">Pilih Judul Berita</option>
+                    @foreach ($news as $berita)
+                        <option value="{{ $berita->id }}">
+                            {{ $berita->title }}
                         </option>
                     @endforeach
-                  </select>
+                </select>
             </div>
             <div class="form-group">
-                <label for="location">Lokasi</label>
-                <input type="text" class="form-control" name="location" placeholder="Lokasi" value="{{ old('location')}}" required>
-            </div>
-            <div class="form-group">
-                <label class="CkDes" for="descriptions">Content Descriptions</label>
-                <!-- <textarea name="descriptions" id="descriptions" class="form-control" required></textarea> -->
-
-                <textarea name="descriptions" id="descriptions" class="form-control my-editor">{!! old('descriptions', $descriptions ?? '') !!}</textarea>
-            </div>
-            <div class="form-group">
-                <label for="date">Tanggal</label>
-                <input type="date" class="form-control" name="date" placeholder="Tanggal Publish" value="{{ old('date')}}" required>
-            </div>
+                <label for="tag_name">kategori</label>
+                <input type="text" class="form-control" name="tag_name" placeholder="pisahkan dengan koma" 
+                       value="{{ old('tag_name')}}" required>
+            </div>            
             <button type="submit" class="btn btn-primary btn-block">Simpan</button>
         </form>
      </div>

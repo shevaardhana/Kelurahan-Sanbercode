@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\NewsRequest;
 use App\Models\News;
 use App\Models\Image;
+use App\Tag;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\User;
@@ -50,10 +51,12 @@ class NewsController extends Controller
     {
         $users = User::all();
         $user = Auth::user();
+        $tags = Tag::with(['news'])->get();
         // dd($user);
         return view('pages.backend.news.create',[
             'users' => $users,
-            'user' => $user
+            'user' => $user,
+            'tags' => $tags
         ]);
     }
 
@@ -95,8 +98,10 @@ class NewsController extends Controller
     public function edit($id)
     {
         $item = News::findOrFail($id);
+        $tags = Tag::with(['news'])->get();
         return view('pages.backend.news.edit', [
-            'item' => $item
+            'item' => $item,
+            'tags' => $tags,
         ]);
     }
 

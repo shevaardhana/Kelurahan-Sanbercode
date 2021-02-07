@@ -34,6 +34,7 @@
                         <tr>
                             <th style="width: 5%;">NO</th>
                             <th>Judul</th>
+                            <th>Kategori</th>
                             <th style="width: 15%;">Lokasi</th>
                             <th>Deskripsi</th>
                             <th style="width: 15%;">Tanggal</th>
@@ -47,6 +48,7 @@
                         <tr>
                             <td>{{ $no }}</td>
                             <td>{{ $item->title }}</td>
+                            <td>{{ $item->kategori }}</td>
                             <td>{{ $item->location }}</td>
                             <td>
                             {!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}

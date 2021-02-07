@@ -37,14 +37,25 @@
                 <input type="text" class="form-control" name="title" placeholder="Title" value="{{ $item->title }}" required>
             </div>
             <div class="form-group">
+                  <label for="kategori">Kategori</label>
+                  <select name="kategori" class="form-control" required>
+                    @foreach ($tags as $tag)
+                        <option value="{{ $tag->tag_name }}">
+                            {{ $tag->tag_name }}
+                        </option>
+                    @endforeach
+                  </select>
+            </div>
+            <div class="form-group">
                 <label for="location">Lokasi</label>
                 <input type="text" class="form-control" name="location" placeholder="Lokasi" value="{{ $item->location }}" required>
             </div>
             <div class="form-group">
                 <label for="descriptions">Deskripsi</label>              
-                <textarea name="descriptions" id="descriptions" class="form-control my-editor">
-                {{ $item->descriptions }}
-                </textarea>
+                <!-- <textarea name="descriptions" id="descriptions" class="form-control my-editor">
+                
+                </textarea> -->
+                <textarea name="descriptions" id="descriptions" class="form-control my-editor">{{ $item->descriptions }}</textarea>
             </div>
             <div class="form-group">
                 <label for="date">Tanggal</label>

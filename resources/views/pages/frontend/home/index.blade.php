@@ -133,7 +133,7 @@
                                 <h5 class="card-title">{{ $item->title }}</h5>                          
                                 <p class="card-title"> Ditulis Oleh : <strong>{{ $item->user->name }}</strong>  </p>
                                 <p class="card-text">
-                                    <i class="fas fa-calendar-week"></i>
+                                    <i class="fas fa-calendar-week"></i>  {{ $item->location }} -
                                 {{ \Carbon\Carbon::create($item->date)->isoFormat('dddd, D MMMM Y')}} 
                                 </p>
                                 <p class="card-text">{!! (str_word_count($item->descriptions) > 60 ? substr($item->descriptions, 0,200)." [...]." :($item->descriptions))  !!}</p>                              

@@ -13,6 +13,9 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Judul : {{ $items->title }}</h5>
+                <p>Kategori :
+                    <button type="button" class="btn btn-success">{{ $items->kategori }}</button>               
+                </p> 
                 <h5 class="card-title">Penulis : {{$items->user->name}}</h5>
                 <h5 class="card-title">Lokasi : {{ $items->location }}</h5>
                 <h5 class="card-title">Tanggal Publish : {{ $items->date }}</h5>

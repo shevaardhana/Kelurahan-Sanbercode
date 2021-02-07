@@ -31,19 +31,8 @@
         <form action="{{ route('tags.store')}}" method="POST" enctype="multipart/form-data">
          @csrf
             <div class="form-group">
-                <label for="news_id">Judul Berita</label>
-                <select name="news_id" class="form-control" required>
-                    <option value="">Pilih Judul Berita</option>
-                    @foreach ($news as $berita)
-                        <option value="{{ $berita->id }}">
-                            {{ $berita->title }}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group">
                 <label for="tag_name">kategori</label>
-                <input type="text" class="form-control" name="tag_name" placeholder="pisahkan dengan koma" 
+                <input type="text" class="form-control" name="tag_name" placeholder="tag name" 
                        value="{{ old('tag_name')}}" required>
             </div>            
             <button type="submit" class="btn btn-primary btn-block">Simpan</button>

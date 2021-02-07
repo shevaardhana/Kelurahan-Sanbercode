@@ -133,13 +133,11 @@
                 <h5 class="card-title text-center">{{ $item->title }}</h5>
                 <p class="card-text text-center">Ditulis Oleh :<strong>{{ $item->user->name }}</strong></p>
                 <p class="card-text text-center">
-                    <i class="fas fa-calendar-week"></i>                  
+                    <i class="fas fa-calendar-week"></i>   {{ $item->location }} -               
                     {{ \Carbon\Carbon::create($item->date)->isoFormat('dddd, D MMMM Y')}}                
                 </p>
                 <p>Kategori/Tags :
-                        <button type="button" class="btn btn-success">Covid19</button> 
-                        <button type="button" class="btn btn-success">PKH</button> 
-                        <button type="button" class="btn btn-success">Kemensos</button>  
+                        <button type="button" class="btn btn-success">{{ $item->kategori }}</button> 
                 </p>  
                 <!-- <img src="{{ asset('frontend/img/1.jpeg') }}" class="card-img-top" alt="gambar1" style="height: 350px;"> -->
                <!-- <div class="row mt-1">
