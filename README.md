@@ -7,6 +7,55 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+
+# FINAL PROJECT
+## KELOMPOK 5
+Budi Haryanto
+Sheva Ardhana
+Nursyafriady
+
+## TEMA
+Protototype Website Kelurahan
+
+## LINK VIDEO DEMO
+belum buat
+
+## LINK DEPLOY
+Nursyafriady : https://webkelurahan.nursyafriady.site/
+
+## ERD
+Terlampir di folder public/img/ERD_KelurahanSanbercode.png
+
+## UI/UX TEMPLATE
+Bootstrap, CSS, adobeXD, Photoshop
+
+## LIBRARY/PACKAGE
+Sweetalert, data Tables, xZoom Container, Carbon
+
+## SUMBER REFERENSI TEMPLATE/CONTENT
+google (hanya untuk pembelajaran/prototype)
+
+## PROSES/ALUR
+Proses CRUD dan relasi antar table lebih ini diutamakan di bagian ADMIN/Backend antara lain : 
+berita, gambar, data penduduk, profile/pegawai, gambar struktur organisasi, kategori berita.
+
+## RELATIONSHIP
+1 - one to one : table user dan profile
+2 - one to many : 
+    a. table user dan berita
+    b. table berita dengan gambar berita (galleri menggunakan library xZoom)
+3 - many to many : 
+    table berita dengan kategori/tags. yg baru bisa berjalan adalah relasi table kategori dengan berita (satu kategori bisa dimiliki oleh banyak berita)
+4 - table struktur organisasi dan table penduduk : tidak ada relasi
+
+
+
+
+
+
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
