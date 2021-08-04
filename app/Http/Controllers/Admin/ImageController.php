@@ -60,11 +60,8 @@ class ImageController extends Controller
     public function store(ImageRequest $request)
     {
         $data = $request->all();
-        $data['image'] = $request->file('image')->store(
-            'assets/image', 'public'
-        );
-
-        $response = cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
+        $data['image'] = cloudinary()->upload($request->file('image')->getRealPath())
+        ->getSecurePath();
 
         dd($response);
 
