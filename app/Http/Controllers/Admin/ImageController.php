@@ -22,7 +22,7 @@ class ImageController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -63,6 +63,10 @@ class ImageController extends Controller
         $data['image'] = $request->file('image')->store(
             'assets/image', 'public'
         );
+
+        $response = cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
+
+        dd($response);
 
         Image::create($data);
         Alert::success('Success', 'Berhasil menambahkan gambar');

@@ -22,7 +22,7 @@ class struktur_organisasiController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -56,6 +56,10 @@ class struktur_organisasiController extends Controller
         $data['image'] = $request->file('image')->store(
             'assets/organisasi', 'public'
         );
+
+        $response = cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
+
+        dd($response);
 
         struktur_organisasi::create($data);
         Alert::success('Success', 'Berhasil menambahkan gambar');
