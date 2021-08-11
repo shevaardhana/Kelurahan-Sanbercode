@@ -57,10 +57,6 @@ class struktur_organisasiController extends Controller
             'assets/organisasi', 'public'
         );
 
-        $response = cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
-
-        dd($response);
-
         struktur_organisasi::create($data);
         Alert::success('Success', 'Berhasil menambahkan gambar');
         return redirect()->route('struktur.index');

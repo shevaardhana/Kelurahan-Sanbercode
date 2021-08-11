@@ -64,10 +64,6 @@ class ImageController extends Controller
             'assets/image', 'public'
         );
 
-        $response = cloudinary()->upload($request->file('image')->getRealPath())->getSecurePath();
-
-        dd($response);
-
         Image::create($data);
         Alert::success('Success', 'Berhasil menambahkan gambar');
         return redirect()->route('image.index');
